@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'userHomeScreen.dart';
 import 'userQuestScreen.dart';
-import 'userCheckBluetoothScreen.dart';
-import 'userCheckQuestionScreen.dart';
-import 'userExhibitScreen.dart';
-import 'userExitScreen.dart';
-import 'userResultScreen.dart';
-class userExitScreen extends StatelessWidget {
-  const userExitScreen({Key? key}) : super(key: key);
+class userCheckBluetoothScreen extends StatelessWidget {
+  const userCheckBluetoothScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +11,7 @@ class userExitScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Выход из квеста'),
+            const Text('Проверка (нахождение маячка)'),
             TextButton.icon(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.black),
@@ -30,17 +24,17 @@ class userExitScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context)
                     {
-                      return const userHomeScreen();
+                      return const userQuestScreen();
                     },
                   ),
                 );
               },
               icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Выход из квеста'),
+              label: const Text('Вернуться к квесту'),
             ),
           ],
         ),
-        ),
+      ),
       ),
     );
   }

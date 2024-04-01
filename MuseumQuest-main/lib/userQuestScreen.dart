@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'userCheckBluetoothScreen.dart';
-import 'userCheckQuestionScreen.dart';
-class userExhibitScreen extends StatelessWidget {
-  const userExhibitScreen({Key? key}) : super(key: key);
+import 'userExhibitScreen.dart';
+import 'userExitScreen.dart';
+import 'userResultScreen.dart';
+class userQuestScreen extends StatelessWidget {
+  const userQuestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class userExhibitScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Экспонат'),
+            const Text('Квест'),
             TextButton.icon(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.black),
@@ -25,13 +26,13 @@ class userExhibitScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context)
                     {
-                      return const userCheckQuestionScreen();
+                        return const userExitScreen();
                     },
-                  ),
-                );
-              },
+                ),
+              );
+            },
               icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Вопрос'),
+              label: const Text('Выход из квеста'),
             ),
             TextButton.icon(
               style: ButtonStyle(
@@ -43,13 +44,33 @@ class userExhibitScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const userCheckBluetoothScreen();
+                      return const userExhibitScreen();
                     },
                   ),
                 );
               },
               icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Трекер'),
+              label: const Text('Экспонат'),
+            ),
+            TextButton.icon(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.black),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+              ),
+              onPressed: () {
+                //Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context)
+                    {
+                      return const userResultScreen();
+                    },
+                  ),
+                );
+              },
+              icon: const Icon(Icons.arrow_circle_right_sharp),
+              label: const Text('Результаты'),
             ),
           ],
         ),

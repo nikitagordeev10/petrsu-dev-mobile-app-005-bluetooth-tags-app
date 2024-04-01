@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'userQuestScreen.dart';
-class userCheckBluetoothScreen extends StatelessWidget {
-  const userCheckBluetoothScreen({Key? key}) : super(key: key);
+class userCheckQuestionScreen extends StatelessWidget {
+  const userCheckQuestionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class userCheckBluetoothScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Проверка (нахождение маячка)'),
+            const Text('Проверка (вопрос)'),
             TextButton.icon(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.black),

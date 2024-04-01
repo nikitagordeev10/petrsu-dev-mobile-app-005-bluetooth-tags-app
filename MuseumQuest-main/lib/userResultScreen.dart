@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'userQuestScreen.dart';
-class userCheckQuestionScreen extends StatelessWidget {
-  const userCheckQuestionScreen({Key? key}) : super(key: key);
+import 'userMainScreen.dart';
+class userResultScreen extends StatelessWidget {
+  const userResultScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class userCheckQuestionScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Проверка (вопрос)'),
+            const Text('Результаты'),
             TextButton.icon(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.black),
@@ -24,13 +24,13 @@ class userCheckQuestionScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context)
                     {
-                      return const userQuestScreen();
+                      return const userMainScreen();
                     },
                   ),
                 );
               },
               icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Вернуться к квесту'),
+              label: const Text('На главную'),
             ),
           ],
         ),
