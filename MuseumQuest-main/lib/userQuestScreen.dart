@@ -1,81 +1,205 @@
 import 'package:flutter/material.dart';
-import 'userExhibitScreen.dart';
 import 'userExitScreen.dart';
 import 'userResultScreen.dart';
-class userQuestScreen extends StatelessWidget {
-  const userQuestScreen({super.key});
+import 'userCheckBluetoothScreen.dart'; // Шаг 1: Импорт файла
+import 'userCheckQuestionScreen.dart'; // Шаг 1: Импорт файла
+
+class userQuestScreen extends StatefulWidget {
+  const userQuestScreen({Key? key});
+
+  @override
+  _userQuestScreenState createState() => _userQuestScreenState();
+}
+
+class _userQuestScreenState extends State<userQuestScreen> {
+  List<bool> _isCardCorrect = List.generate(6, (index) => false);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Квест'),
-            TextButton.icon(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-              ),
-              onPressed: () {
-                //Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context)
-                    {
-                        return const userExitScreen();
-                    },
+    double screenWidth = MediaQuery.of(context).size.width;
+    double cardWidth = (screenWidth - 40) / 2; // Делим ширину экрана пополам и вычитаем отступы между карточками
+    double cardHeight = cardWidth + 45; // Высота карточки равна ширине изображения плюс высота кнопки
+
+    return WillPopScope(
+      onWillPop: () async {
+        await showDialog(
+          context: context,
+          builder: (context) => userExitScreen(),
+        );
+        return false; // Returning false prevents the back operation
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Изобретения'), // Замените на желаемый заголовок
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Wrap(
+                      alignment: WrapAlignment.spaceEvenly,
+                      children: List.generate(
+                        6,
+                            (index) => _buildExhibitCard(
+                          context,
+                          index + 1, // Добавляем 1, чтобы начать с quest_1.jpg
+                          index, // Передаём индекс вопроса
+                          cardWidth,
+                          cardHeight,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              );
-            },
-              icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Выход из квеста'),
-            ),
-            TextButton.icon(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const userExhibitScreen();
-                    },
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildExhibitCard(
+      BuildContext context,
+      int questNumber,
+      int questionIndex, // Индекс вопроса
+      double cardWidth,
+      double cardHeight,
+      ) {
+    final String imagePath = 'lib/img/quest/quest_$questNumber.png';
+    final String magnifyingGlassIcon = 'lib/img/icons/magnifying_glass.png'; // Иконка лупы
+    return Container(
+      width: cardWidth,
+      height: cardHeight,
+      margin: EdgeInsets.all(8),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        elevation: 4,
+        color: _isCardCorrect[questionIndex] ? Colors.green : null,
+        child: Stack(
+          alignment: Alignment.topRight, // Выравниваем иконку в правом верхнем углу
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        content: Image.asset(
+                          imagePath,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0)
+                        .add(EdgeInsets.only(top: 8.0))
+                        .add(EdgeInsets.only(bottom: 1.0)),
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                );
-              },
-              icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Экспонат'),
+                ),
+                if (_isCardCorrect[questionIndex])
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      'Найдено',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                if (!_isCardCorrect[questionIndex])
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        // onPrimary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          side: BorderSide(color: Colors.white),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => userCheckQuestionScreen(
+                              questionIndex: questionIndex,
+                              onAnswerSubmitted: (isCorrect) {
+                                setState(() {
+                                  _isCardCorrect[questionIndex] = isCorrect;
+                                  _checkAllAnswers();
+                                });
+                              },
+                            ),
+                          ),
+                        );
+                      },
+                      child: Text('Я нашел!', style: TextStyle(color: Colors.white)),
+                    ),
+                  ),
+              ],
             ),
-            TextButton.icon(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  // Действия при нажатии на иконку
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: Image.asset(
+                        imagePath,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  );
+                },
+                child: Image.asset(
+                  magnifyingGlassIcon, // Путь к изображению иконки лупы
+                  width: 30, // Ширина иконки
+                  height: 30, // Высота иконки
+                ),
               ),
-              onPressed: () {
-                //Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context)
-                    {
-                      return const userResultScreen();
-                    },
-                  ),
-                );
-              },
-              icon: const Icon(Icons.arrow_circle_right_sharp),
-              label: const Text('Результаты'),
             ),
           ],
         ),
       ),
-      ),
     );
   }
+
+
+  void _checkAllAnswers() {
+    if (_isCardCorrect.every((isCorrect) => isCorrect)) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => userResultScreen(),
+        ),
+      );
+    }
+  }
 }
+
+
+

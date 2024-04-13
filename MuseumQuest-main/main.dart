@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:museum_app/userMainScreen.dart';
+import 'package:museum_app/userHomeScreen.dart';
 import 'package:museum_app/theme/theme.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: themeData,
-      home: const userMainScreen(),
+      home: const userHomeScreen(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       /*routes: {

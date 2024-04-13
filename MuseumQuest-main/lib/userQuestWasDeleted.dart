@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'userHomeScreen.dart';
 
-class userExitScreen extends StatelessWidget {
-  const userExitScreen({Key? key});
+class userQuestWasDeleted extends StatelessWidget {
+  const userQuestWasDeleted({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class userExitScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              'lib/img/icons/exit.png',
+              'lib/img/icons/delete.png',
               width: 130, // Указываем размер изображения
               height: 130,
             ),
@@ -21,7 +21,7 @@ class userExitScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Выход из квеста',
+              'Квест был удалён',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -31,7 +31,7 @@ class userExitScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Вы можете выйти или продолжить прохождение квеста',
+              'Квест больше не доступен для прохождения',
               textAlign: TextAlign.center,
             ),
           ),
@@ -49,35 +49,13 @@ class userExitScreen extends StatelessWidget {
                 minimumSize: Size(double.infinity, 48), // Ширина кнопки на всю доступную ширину
               ),
               child: Text(
-                'Остаться',
+                'Окей',
                 style: TextStyle(color: Colors.white), // Установка цвета текста на белый
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => userHomeScreen(),
-                  ),
-                );
-              },
-              style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4.0), // Закругление радиусом 4
-                ),
-                side: BorderSide(color: Colors.white), // Белая обводка
-                minimumSize: Size(double.infinity, 48), // Ширина кнопки на всю доступную ширину
-              ),
-              child: Text(
-                'Выйти',
-                style: TextStyle(color: Colors.white), // Установка цвета текста на белый
-              ),
-            ),
-          ),
+
+
 
         ],
       ),
