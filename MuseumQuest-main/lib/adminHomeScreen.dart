@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'adminExibitScreen.dart';
+import 'adminTagsScreen.dart';
 
-class AdminHomeScreen extends StatefulWidget {
-  const AdminHomeScreen({Key? key}) : super(key: key);
+
+class adminHomeScreen extends StatefulWidget {
+  const adminHomeScreen({Key? key}) : super(key: key);
 
   @override
-  _AdminHomeScreenState createState() => _AdminHomeScreenState();
+  _adminHomeScreenState createState() => _adminHomeScreenState();
 }
 
-class _AdminHomeScreenState extends State<AdminHomeScreen> {
+class _adminHomeScreenState extends State<adminHomeScreen> {
   int _selectedIndex = 0;
 
   @override
@@ -96,6 +99,24 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (index == 0) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminHomeScreen()), // Переходим на экран экспонатов
+        );
+      }
+      if (index == 1) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminExibitScreen()), // Переходим на экран экспонатов
+        );
+      }
+      if (index == 2) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminTagsScreen()), // Переходим на экран экспонатов
+        );
+      }
     });
   }
 

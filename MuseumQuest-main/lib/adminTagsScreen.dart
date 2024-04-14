@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'adminExibitScreen.dart';
+import 'adminHomeScreen.dart';
 
-class AdminTagsScreen extends StatelessWidget {
-  const AdminTagsScreen ({Key? key}) : super(key: key);
+class adminTagsScreen extends StatefulWidget {
+  const adminTagsScreen ({Key? key}) : super(key: key);
+  
+  @override
+  _adminTagsScreenState createState() => _adminTagsScreenState();
+}
+
+class _adminTagsScreenState extends State<adminTagsScreen> {
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +27,52 @@ class AdminTagsScreen extends StatelessWidget {
           buildLabelCard(),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFF252836),
+        selectedItemColor: Color(0xFF1AACBC), // Цвет выделенной вкладки
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.article_outlined),
+            label: 'Квесты',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.museum_outlined),
+            label: 'Экспонаты',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pin_drop_outlined),
+            label: 'Метки',
+          ),
+        ],
+      ),
     );
   }
-
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      if (index == 0) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminHomeScreen()), // Переходим на экран экспонатов
+        );
+      }
+      if (index == 1) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminExibitScreen()), // Переходим на экран экспонатов
+        );
+      }
+      if (index == 2) { // Проверяем, что нажата вторая вкладка (индекс 1)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => adminTagsScreen()), // Переходим на экран экспонатов
+        );
+      }
+    });
+  }
+  
   Widget buildLabelCard() {
     return Card(
       margin: const EdgeInsets.all(16),
@@ -74,10 +126,4 @@ class AdminTagsScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: AdminTagsScreen(),
-  ));
 }

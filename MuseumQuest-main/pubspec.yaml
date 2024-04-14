@@ -50,11 +50,20 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
-
+  flutter_launcher_icons: "^0.13.1"
+  image_picker: ^1.0.8
   url_launcher: ^6.0.12
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "lib/img/logo/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
+
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -66,25 +75,30 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/img/results_image.png
-    - lib/img/support_image.png
-    - lib/img/background_image_1.jpg
-    - lib/img/background_image_2.jpg
-    - lib/img/background_image_3.jpg
-    - lib/img/quest/quest_1.png
-    - lib/img/quest/quest_2.png
-    - lib/img/quest/quest_3.png
-    - lib/img/quest/quest_4.png
-    - lib/img/quest/quest_5.png
-    - lib/img/quest/quest_6.png
-    - lib/img/icons/exit.png
-    - lib/img/icons/new_version.png
-    - lib/img/icons/bluetooth_search.png
-    - lib/img/icons/bluetooth_no_connection.png
-    - lib/img/icons/magnifying_glass.png
-    - lib/img/icons/support.png
-    - lib/img/icons/quests.png
-    - lib/img/icons/delete.png
+    - lib/img/
+    - lib/img/quest/
+    - lib/img/icons/
+    - lib/img/icons/delete_small.png
+    - lib/img/icons/edit.png
+#    - lib/img/results_image.png
+#    - lib/img/support_image.png
+#    - lib/img/background_image_1.jpg
+#    - lib/img/background_image_2.jpg
+#    - lib/img/background_image_3.jpg
+#    - lib/img/quest/quest_1.png
+#    - lib/img/quest/quest_2.png
+#    - lib/img/quest/quest_3.png
+#    - lib/img/quest/quest_4.png
+#    - lib/img/quest/quest_5.png
+#    - lib/img/quest/quest_6.png
+#    - lib/img/icons/exit.png
+#    - lib/img/icons/new_version.png
+#    - lib/img/icons/bluetooth_search.png
+#    - lib/img/icons/bluetooth_no_connection.png
+#    - lib/img/icons/magnifying_glass.png
+#    - lib/img/icons/support.png
+#    - lib/img/icons/quests.png
+#    - lib/img/icons/delete.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -24,7 +24,7 @@ class adminAuthorizationScreen extends StatelessWidget {
         // Переход на страницу администратора
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AdminHomeScreen()),
+          MaterialPageRoute(builder: (context) => adminHomeScreen()),
         );
       } else {
         // Вывод сообщения об ошибке аутентификации
