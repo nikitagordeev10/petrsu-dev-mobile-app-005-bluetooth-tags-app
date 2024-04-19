@@ -60,7 +60,7 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "lib/img/logo/logo.png"
+  image_path: "lib/img/logo/logo_round.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 
@@ -80,6 +80,7 @@ flutter:
     - lib/img/icons/
     - lib/img/icons/delete_small.png
     - lib/img/icons/edit.png
+    - lib/img/logo/
 #    - lib/img/results_image.png
 #    - lib/img/support_image.png
 #    - lib/img/background_image_1.jpg
