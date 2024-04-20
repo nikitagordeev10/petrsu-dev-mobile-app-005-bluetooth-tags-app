@@ -73,15 +73,15 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
           onTap: _onItemTapped,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.article_outlined),
+              icon: Icon(Icons.museum_outlined),
               label: 'Квесты',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.museum_outlined),
+              icon: Icon(Icons.category),
               label: 'Экспонаты',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.pin_drop_outlined),
+              icon: Icon(Icons.contactless),
               label: 'Метки',
             ),
           ],

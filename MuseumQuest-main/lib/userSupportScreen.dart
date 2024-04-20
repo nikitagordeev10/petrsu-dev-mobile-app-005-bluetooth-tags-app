@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:museum_app/userHomeScreen.dart';
 import 'userHomeScreen.dart';
 import 'adminAuthorizationScreen.dart'; // Импорт экрана администраторской авторизации
+import 'package:url_launcher/url_launcher.dart';
+
 
 class userSupportScreen extends StatefulWidget {
   const userSupportScreen({Key? key}) : super(key: key);
@@ -68,17 +70,27 @@ class _userSupportScreenState extends State<userSupportScreen> {
                 width: double.infinity,
                 height: 60,
                 child: ElevatedButton(
-                  onPressed: () {
-                    _copyToClipboard('muzbingo@yandex.ru', context);
-                  },
+                  onPressed: () async {
+                final toEmail = 'muzbingo@yandex.ru';
+                final subject = 'Вопрос о приложении МузБинго';
+                final message = 'Здравствуйте,\n\nУ меня возникли некоторые вопросы по использованию вашего приложения МузБинго. Я столкнулся с некоторыми проблемами и хотел бы получить помощь.';
+                final url = 'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
+
+                if (await canLaunch(url)) {
+                await launch(url);
+                } else {
+                print('Не удалось открыть приложение электронной почты.');
+                }
+                },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF1AACBC), // цвет кнопки
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4), // закругление углов
                     ),
                   ),
-                  child: const Text('Скопировать адрес почты', style: TextStyle(color: Colors.white)),
+                  child: const Text('Написать на почту', style: TextStyle(color: Colors.white)),
                 ),
+
               ),
             ],
           ),
@@ -106,12 +118,7 @@ class _userSupportScreenState extends State<userSupportScreen> {
     );
   }
 
-  void _copyToClipboard(String text, BuildContext context) {
-    Clipboard.setData(ClipboardData(text: text));
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Адрес скопирован в буфер обмена')),
-    );
-  }
+
 
   void _incrementTapCount() {
     setState(() {
