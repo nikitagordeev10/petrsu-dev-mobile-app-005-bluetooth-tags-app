@@ -55,7 +55,7 @@ class _userMainScreenState extends State<userMainScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'Настройки',
+              label: 'Поддержка',
             ),
           ],
           currentIndex: _selectedIndex,

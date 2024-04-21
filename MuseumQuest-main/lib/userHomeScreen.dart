@@ -5,6 +5,8 @@ import 'package:museum_app/userSupportScreen.dart';
 import 'package:museum_app/userQuestScreen.dart';
 import 'package:museum_app/userNewQuestVersion.dart';
 import 'package:museum_app/userQuestWasDeleted.dart';
+import 'package:museum_app/ui_widgets/quest_widget.dart';
+import 'package:museum_app/modules/quests_module.dart';
 
 class userHomeScreen extends StatefulWidget {
   const userHomeScreen({Key? key}) : super(key: key);
@@ -15,6 +17,7 @@ class userHomeScreen extends StatefulWidget {
 
 class _userHomeScreenState extends State<userHomeScreen> {
   int _selectedIndex = 0;
+  List<List<String>> questInfoList = getQuestsInformation();
 
   final List<Widget> _screens = [
     userHomeScreen(),
@@ -34,8 +37,72 @@ class _userHomeScreenState extends State<userHomeScreen> {
     });
   }
 
+  // получаем список виджетов для квестов
+  List<Widget> getQuestWidgetList()
+  {
+    List<Widget> questWidgetList = [];
+    List<List<String>> questInfoList = getQuestsInformation();
+
+    for (final element in questInfoList)
+    {
+      int id = int.parse(element[0]);
+      String title = element[1];
+      String description = element[2];
+      String imagePath = element[3];
+      String status = element[4];
+      String buttonText;
+      Widget destinationScreen;
+      List<int> foundExhibitsList = [];
+
+      if (status == '0')
+      {
+        buttonText = 'Начать';
+        destinationScreen = userQuestScreen(foundExhibitsList: [], questId: id);
+      }
+      else if (status == '1')
+      {
+        buttonText = 'Продолжить';
+        foundExhibitsList = getFoundExhibits(id);
+        destinationScreen = userQuestScreen(foundExhibitsList: foundExhibitsList, questId: id);
+      }
+      else {
+        buttonText = 'Пройти ещё раз';
+        destinationScreen = userQuestScreen(foundExhibitsList: [], questId: id);
+      }
+
+      questWidgetList.add(
+          buildCardWithBackground(
+            context,
+            status,
+            imagePath,
+            title,
+            description,
+            buttonText,
+            destinationScreen,
+            onContinuePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => destinationScreen),
+              );
+            },
+            onRestartPressed: () {
+              if (status == '1')
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => userQuestScreen(foundExhibitsList: [], questId: id)),
+                );
+              }
+            },
+          ));
+    }
+    return questWidgetList;
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> widgetList = [];
+    widgetList = getQuestWidgetList();
     return MaterialApp(
       theme: themeData,
       home: Scaffold(
@@ -45,60 +112,12 @@ class _userHomeScreenState extends State<userHomeScreen> {
           centerTitle: true, // Выровнять заголовок по центру
           title: Text('Квесты'),
         ),
-        body: ListView(
-          padding: EdgeInsets.all(20.0),
-          children: [
-            _buildCardWithBackground(
-              context,
-              'lib/img/background_image_1.jpg',
-              'Одежда',
-              'Традиционная одежда, вышивка, украшения и ткачество',
-              'Начать',
-              userQuestScreen(),
-              onContinuePressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userQuestScreen()),
-                );
-              },
-            ),
-            SizedBox(height: 20),
-            _buildCardWithBackground(
-              context,
-              'lib/img/background_image_2.jpg',
-              'Изобретения',
-              'Лодки, инструменты, украшения из меди и многое другое',
-              'Продолжить',
-              userQuestScreen(),
-              onContinuePressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userNewQuestVersion()),
-                );
-              },
-              onRestartPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userNewQuestVersion()),
-                );
-              },
-            ),
-            SizedBox(height: 20),
-            _buildCardWithBackground(
-              context,
-              'lib/img/background_image_3.jpg',
-              'Национальные блюда',
-              'Традиционная одежда, вышивка, украшения и ткачество',
-              'Пройти ещё раз',
-              userQuestWasDeleted(),
-              onContinuePressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => userQuestWasDeleted()),
-                );
-              },
-            ),
-          ],
+        body: ListView.builder(
+          itemCount: widgetList.length,
+          itemBuilder: (BuildContext context, int index)
+          {
+            return widgetList[index];
+          }
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
@@ -117,84 +136,6 @@ class _userHomeScreenState extends State<userHomeScreen> {
           ],
           currentIndex: _selectedIndex,
           onTap: _onTapped,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCardWithBackground(BuildContext context, String imagePath, String title, String description, String buttonText, Widget destinationScreen, {Function()? onContinuePressed, Function()? onRestartPressed}) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-      elevation: 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4.0),
-          image: DecorationImage(
-            image: AssetImage(imagePath),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-              Color(0xFF252836).withOpacity(0.8),
-              BlendMode.darken,
-            ),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                description,
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-              SizedBox(height: 10),
-              Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: MaterialButton(
-                        onPressed: onContinuePressed ?? () {},
-                        color: Color(0xFF1AACBC),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                        clipBehavior: Clip.antiAlias,
-                        child: Text(buttonText, style: TextStyle(color: Colors.white)),
-                      ),
-                    ),
-                  ),
-                  if (onRestartPressed != null)
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: MaterialButton(
-                          onPressed: onRestartPressed,
-                          color: Colors.transparent,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            side: BorderSide(color: Colors.white, width: 2),
-                          ),
-                          clipBehavior: Clip.antiAlias,
-                          child: Text('Начать сначала', style: TextStyle(color: Colors.white)),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-            ],
-          ),
         ),
       ),
     );
