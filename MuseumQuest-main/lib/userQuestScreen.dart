@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:museum_app/modules/quests_module.dart';
+import 'modules/exhibit_module.dart';
 import 'userExitScreen.dart';
 import 'userResultScreen.dart';
-import 'userCheckBluetoothScreen.dart'; // Шаг 1: Импорт файла
-import 'userCheckQuestionScreen.dart'; // Шаг 1: Импорт файла
+import 'userCheckBluetoothScreen.dart';
+import 'userCheckQuestionScreen.dart';
 
 class userQuestScreen extends StatefulWidget {
-  const userQuestScreen({Key? key});
+  final List<int> foundExhibitsList;
+  final int questId;
+  const userQuestScreen({Key? key, required this.foundExhibitsList, required this.questId});
 
   @override
-  _userQuestScreenState createState() => _userQuestScreenState();
+  _userQuestScreenState createState() => _userQuestScreenState(foundExhibitsList: foundExhibitsList);
 }
 
 class _userQuestScreenState extends State<userQuestScreen> {
-    List<bool> _isCardCorrect = List.generate(6, (index) => false);
+  List<int> foundExhibitsList;
+  _userQuestScreenState({required this.foundExhibitsList});
+  List<bool> _isCardCorrect = [];
 
   @override
   Widget build(BuildContext context) {
+    _isCardCorrect = getCorrectCardList(this.foundExhibitsList);
     double screenWidth = MediaQuery.of(context).size.width;
     double cardWidth = (screenWidth - 40) / 2; // Делим ширину экрана пополам и вычитаем отступы между карточками
     double cardHeight = cardWidth + 45; // Высота карточки равна ширине изображения плюс высота кнопки
@@ -30,7 +37,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Изобретения'), // Замените на желаемый заголовок
+          title: Text('Изобретения'),
           centerTitle: true,
         ),
         body: SafeArea(
@@ -45,7 +52,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
                       alignment: WrapAlignment.spaceEvenly,
                       children: List.generate(
                         6,
-                            (index) => _buildExhibitCard(
+                            (index) => buildExhibitCard(
                           context,
                           index + 1, // Добавляем 1, чтобы начать с quest_1.jpg
                           index, // Передаём индекс вопроса
@@ -64,7 +71,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
     );
   }
 
-  Widget _buildExhibitCard(
+  Widget buildExhibitCard(
       BuildContext context,
       int questNumber,
       int questionIndex, // Индекс вопроса
@@ -187,7 +194,6 @@ class _userQuestScreenState extends State<userQuestScreen> {
       ),
     );
   }
-
 
   void _checkAllAnswers() {
     if (_isCardCorrect.every((isCorrect) => isCorrect)) {
