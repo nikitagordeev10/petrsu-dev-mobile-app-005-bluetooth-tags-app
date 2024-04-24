@@ -1,8 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'adminExibitScreen.dart';
-import 'adminTagsScreen.dart';
-import 'adminQuestEditScreen.dart';
 import 'adminQuestAddScreen.dart';
+import 'adminDeleteQuestScreen.dart';
+
+class Quest {
+  final String name;
+  final String description;
+  final File image;
+
+  Quest({required this.name, required this.description, required this.image});
+}
 
 class adminHomeScreen extends StatefulWidget {
   const adminHomeScreen({Key? key}) : super(key: key);
@@ -13,29 +21,7 @@ class adminHomeScreen extends StatefulWidget {
 
 class _adminHomeScreenState extends State<adminHomeScreen> {
   int _selectedIndex = 0;
-  List<String> _titles = [
-    'Одежда',
-    'Изобретения',
-    'Национальные блюда',
-  ];
-  List<String> _descriptions = [
-    'Традиционная одежда, вышивка, украшения и ткачество',
-    'Лодки, инструменты, украшения из меди и многое другое',
-    'Традиционные карельские блюда',
-  ];
-  List<String> _images = [
-    'lib/img/background_image_1.jpg',
-    'lib/img/background_image_2.jpg',
-    'lib/img/background_image_3.jpg',
-  ];
-
-  void _removeCard(int index) {
-    setState(() {
-      _titles.removeAt(index);
-      _descriptions.removeAt(index);
-      _images.removeAt(index);
-    });
-  }
+  List<Quest> _quests = [];
 
   @override
   Widget build(BuildContext context) {
@@ -50,18 +36,37 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
           },
         ),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.all(20.0),
-        itemCount: _titles.length,
-        itemBuilder: (BuildContext context, int index) {
-          return _buildCardWithBackground(
-            context,
-            _images[index],
-            _titles[index],
-            _descriptions[index],
-            index,
-          );
-        },
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(20.0),
+              itemCount: _quests.length,
+              itemBuilder: (BuildContext context, int index) {
+                return _buildQuestCard(_quests[index]);
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: ElevatedButton(
+              onPressed: _navigateToAddQuest,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF1AACBC),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+              ),
+              child: Text(
+                'Добавить квест',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFF252836),
@@ -89,31 +94,16 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 0) {
-        // Handle navigation to quests screen
-      }
       if (index == 1) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => adminExibitScreen()),
-        );
+        // Handle navigation to exhibits screen
       }
       if (index == 2) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => adminTagsScreen()),
-        );
+        // Handle navigation to tags screen
       }
     });
   }
 
-  Widget _buildCardWithBackground(
-      BuildContext context,
-      String imagePath,
-      String title,
-      String description,
-      int index,
-      ) {
+  Widget _buildQuestCard(Quest quest) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4.0),
@@ -123,7 +113,7 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4.0),
           image: DecorationImage(
-            image: AssetImage(imagePath),
+            image: FileImage(quest.image),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Color(0xFF252836).withOpacity(0.8),
@@ -137,7 +127,7 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                quest.name,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -146,7 +136,7 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
               ),
               SizedBox(height: 10),
               Text(
-                description,
+                quest.description,
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(height: 10),
@@ -157,19 +147,14 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
                       padding: const EdgeInsets.only(right: 10.0),
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => adminQuestEditScreen()),
-                          );
+                          // Navigate to edit quest screen
                         },
                         color: Color(0xFF1AACBC),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4.0),
                         ),
                         clipBehavior: Clip.antiAlias,
-                        child: Text('Редактировать',
-                            style: TextStyle(color: Colors.white)),
+                        child: Text('Редактировать', style: TextStyle(color: Colors.white)),
                       ),
                     ),
                   ),
@@ -178,17 +163,15 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
                       padding: const EdgeInsets.only(left: 10.0),
                       child: MaterialButton(
                         onPressed: () {
-                          _removeCard(index);
+                          _showDeleteDialog(quest);
                         },
                         color: Colors.transparent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4.0),
-                          side: BorderSide(
-                              color: Color(0xFFEA5F5F), width: 2),
+                          side: BorderSide(color: Color(0xFFEA5F5F), width: 2),
                         ),
                         clipBehavior: Clip.antiAlias,
-                        child: Text('Удалить',
-                            style: TextStyle(color: Color(0xFFEA5F5F))),
+                        child: Text('Удалить', style: TextStyle(color: Color(0xFFEA5F5F))),
                       ),
                     ),
                   ),
@@ -198,6 +181,118 @@ class _adminHomeScreenState extends State<adminHomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _navigateToAddQuest() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => adminQuestAddScreen()),
+    );
+
+    if (result != null) {
+      setState(() {
+        _quests.add(result as Quest);
+      });
+    }
+  }
+
+  void _showDeleteDialog(Quest quest) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: adminDeleteQuestScreen(
+            onCancel: () {
+              Navigator.of(context).pop();
+            },
+            onDelete: () {
+              setState(() {
+                _quests.remove(quest);
+              });
+              Navigator.of(context).pop();
+            },
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class adminDeleteQuestScreen extends StatelessWidget {
+  final VoidCallback? onCancel;
+  final VoidCallback? onDelete;
+
+  const adminDeleteQuestScreen({Key? key, this.onCancel, this.onDelete}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            'lib/img/icons/delete.png',
+            width: 130,
+            height: 130,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Удаление квеста',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'Квест будет удалён без возможности восстановления',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ElevatedButton(
+            onPressed: onDelete,
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0),
+              ),
+              backgroundColor: Color(0xFF1AACBC),
+              minimumSize: Size(double.infinity, 48),
+            ),
+            child: Text(
+              'Удалить',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton(
+            onPressed: onCancel,
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0),
+              ),
+              side: BorderSide(color: Colors.white),
+              minimumSize: Size(double.infinity, 48),
+            ),
+            child: Text(
+              'Отмена',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
