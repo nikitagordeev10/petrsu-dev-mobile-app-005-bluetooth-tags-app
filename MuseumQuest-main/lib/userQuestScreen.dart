@@ -12,7 +12,7 @@ class userQuestScreen extends StatefulWidget {
 }
 
 class _userQuestScreenState extends State<userQuestScreen> {
-  List<bool> _isCardCorrect = List.generate(6, (index) => false);
+    List<bool> _isCardCorrect = List.generate(6, (index) => false);
 
   @override
   Widget build(BuildContext context) {

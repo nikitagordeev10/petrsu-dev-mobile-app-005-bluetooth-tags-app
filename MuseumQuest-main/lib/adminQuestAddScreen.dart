@@ -1,13 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: adminQuestAddScreen(),
-  ));
-}
+import 'adminHomeScreen.dart';
 
 class adminQuestAddScreen extends StatefulWidget {
   const adminQuestAddScreen({Key? key}) : super(key: key);
@@ -25,10 +20,7 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
   String? confirmationType;
 
   void _addExhibit() {
-    String exhibitName = exhibitNameController.text.trim();
-    String question = questionController.text.trim();
-    String answer = answerController.text.trim();
-    // Дополнительная логика для добавления экспоната
+    // Your logic for adding exhibit here
   }
 
   void _cancel() {
@@ -36,8 +28,12 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
   }
 
   void _save() {
-    _addExhibit();
-    Navigator.of(context).pop();
+    // Your logic for saving exhibit here
+    Navigator.of(context).pop(Quest(
+      name: exhibitNameController.text.trim(),
+      description: questionController.text.trim(),
+      image: _selectedImage!,
+    ));
   }
 
   void _addAnswerField() {
@@ -95,7 +91,7 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
               ),
               const SizedBox(height: 5),
               TextFormField(
-                controller: questionController, // Fixed controller
+                controller: questionController,
                 decoration: const InputDecoration(
                   hintText: 'Описание квеста',
                   hintStyle: TextStyle(color: Colors.white),
@@ -116,7 +112,6 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
                 style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
               const SizedBox(height: 5),
-              // Область для загрузки изображения
               Container(
                 height: 150,
                 width: double.infinity,
@@ -137,10 +132,9 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0), // Отступы 20 пикселей с обеих сторон
+                padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
                 child: Center(
                   child: TextButton(
                     onPressed: _pickImageFromGallery,
@@ -179,7 +173,6 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
               ),
               child: Text('Отменить', style: TextStyle(color: Colors.white)),
             ),
-
             ElevatedButton(
               onPressed: _save,
               style: ElevatedButton.styleFrom(
