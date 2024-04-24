@@ -12,17 +12,18 @@ class userQuestScreen extends StatefulWidget {
   const userQuestScreen({Key? key, required this.foundExhibitsList, required this.questId});
 
   @override
-  _userQuestScreenState createState() => _userQuestScreenState(foundExhibitsList: foundExhibitsList);
+  _userQuestScreenState createState() => _userQuestScreenState(foundExhibitsList: foundExhibitsList, questId: questId);
 }
 
 class _userQuestScreenState extends State<userQuestScreen> {
   List<int> foundExhibitsList;
-  _userQuestScreenState({required this.foundExhibitsList});
+  int questId;
+  _userQuestScreenState({required this.foundExhibitsList, required this.questId});
   List<bool> _isCardCorrect = [];
 
   @override
   Widget build(BuildContext context) {
-    _isCardCorrect = getCorrectCardList(this.foundExhibitsList);
+    _isCardCorrect = getCorrectCardList(foundExhibitsList);
     double screenWidth = MediaQuery.of(context).size.width;
     double cardWidth = (screenWidth - 40) / 2; // Делим ширину экрана пополам и вычитаем отступы между карточками
     double cardHeight = cardWidth + 45; // Высота карточки равна ширине изображения плюс высота кнопки
@@ -31,7 +32,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
       onWillPop: () async {
         await showDialog(
           context: context,
-          builder: (context) => userExitScreen(),
+          builder: (context) => userExitScreen(foundExhibits: foundExhibitsList, questId: questId),
         );
         return false; // Returning false prevents the back operation
       },
@@ -152,11 +153,14 @@ class _userQuestScreenState extends State<userQuestScreen> {
                           MaterialPageRoute(
                             builder: (context) => userCheckQuestionScreen(
                               questionIndex: questionIndex,
+                              questId: this.questId,
+                              foundExhibitsList: this.foundExhibitsList,
                               onAnswerSubmitted: (isCorrect) {
                                 setState(() {
                                   _isCardCorrect[questionIndex] = isCorrect;
                                   _checkAllAnswers();
-                                });
+                                },
+                                );
                               },
                             ),
                           ),
@@ -200,7 +204,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => userResultScreen(),
+          builder: (context) => userResultScreen(questId: questId, status: "2",),
         ),
       );
     }

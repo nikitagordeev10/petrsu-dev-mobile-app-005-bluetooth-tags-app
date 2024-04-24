@@ -28,7 +28,8 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
       onWillPop: () async {
         await showDialog(
           context: context,
-          builder: (context) => userExitScreen(),
+          // TODO Заполнить информацию для передачи на другой экран
+          builder: (context) => userExitScreen(foundExhibits: [], questId: 1,),
         );
         return false; // Returning false prevents the back operation
       },
@@ -258,19 +259,6 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
         ),
       ),
     );
-  }
-
-
-
-  void _checkAllAnswers() {
-    if (_isCardCorrect.every((isCorrect) => isCorrect)) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => userResultScreen(),
-        ),
-      );
-    }
   }
 }
 

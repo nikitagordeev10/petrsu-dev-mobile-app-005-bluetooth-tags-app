@@ -51,10 +51,62 @@ List<int> getFoundExhibits(int questId) {
       {
         resultList.add(exhibit);
       }
+      break;
     }
 
   return resultList;
 }
 
-// функция по нахождению информации о квесте (название/описание/статус)
+// функция возвращает статус квеста
+String getQuestStatus(int questId) {
+  var jsonData = jsonString;
+  var data = json.decode(jsonData);
 
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests)
+  {
+    if (quest["quest_id"] == questId)
+    {
+      return quest["status"].toString();
+    }
+  }
+
+  return "0";
+}
+
+// запись нового статуса квеста
+void setQuestStatus(int questId, String newStatus)
+{
+  var jsonData = jsonString;
+  var data = json.decode(jsonData);
+
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests)
+  {
+    if (quest["quest_id"] == questId)
+    {
+      quest["status"] = newStatus;
+      break;
+    }
+  }
+  jsonString = json.encode(data);
+}
+
+// сохранение прогресса прохождения незаконченного квеста
+// void saveProgress(List<int> newFoundExhibits, int questId)
+// {
+//   var jsonData = jsonString;
+//   var data = json.decode(jsonData);
+//
+//   List<dynamic> quests = data['quests'];
+//   for (var quest in quests)
+//   {
+//     if (quest["quest_id"] == questId)
+//     {
+//       quest["found_exhibits"] = newFoundExhibits;
+//       break;
+//     }
+//   }
+//
+//   jsonString = json.encode(data);
+// }

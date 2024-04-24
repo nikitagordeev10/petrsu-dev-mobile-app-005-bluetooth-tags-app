@@ -49,7 +49,7 @@ class _userHomeScreenState extends State<userHomeScreen> {
       String title = element[1];
       String description = element[2];
       String imagePath = element[3];
-      String status = element[4];
+      String status = getQuestStatus(id);
       String buttonText;
       Widget destinationScreen;
       List<int> foundExhibitsList = [];

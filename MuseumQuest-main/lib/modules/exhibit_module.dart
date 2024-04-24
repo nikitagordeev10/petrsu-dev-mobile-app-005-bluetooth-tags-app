@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import '../controllers/db_controller.dart';
 
 List<bool> getCorrectCardList(List<int> foundExhibitsList) {
   List<bool> correctCardList = [];
@@ -11,4 +13,42 @@ List<bool> getCorrectCardList(List<int> foundExhibitsList) {
       correctCardList[i-1] = true;
 
   return correctCardList;
+}
+
+// сохранение прогресса (запись экспоната с индексом index в переменную found_exhibits json файла)
+// TODO поработать со статусами квеста
+void saveProgress(int index, int questId)
+{
+  var jsonData = jsonString;
+  var data = json.decode(jsonData);
+
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests)
+  {
+    if (quest["quest_id"] == questId)
+    {
+      quest["found_exhibits"].add(index+1);
+      break;
+    }
+  }
+
+  jsonString = json.encode(data);
+}
+
+// сброс прогресса
+void resetProgress(int questId)
+{
+  var jsonData = jsonString;
+  var data = json.decode(jsonData);
+
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests)
+  {
+    if (quest["quest_id"] == questId)
+    {
+      quest["found_exhibits"] = [];
+      break;
+    }
+  }
+  jsonString = json.encode(data);
 }

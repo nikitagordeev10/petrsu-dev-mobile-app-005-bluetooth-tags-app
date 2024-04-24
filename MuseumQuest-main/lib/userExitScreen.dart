@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:museum_app/modules/quests_module.dart';
 import 'userHomeScreen.dart';
 
 class userExitScreen extends StatelessWidget {
-  const userExitScreen({Key? key});
+  final List<int> foundExhibits;
+  final int questId;
+  const userExitScreen({Key? key, required this.foundExhibits, required this.questId});
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +61,7 @@ class userExitScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: OutlinedButton(
               onPressed: () {
+                setQuestStatus(questId, '1');
                 Navigator.push(
                   context,
                   MaterialPageRoute(

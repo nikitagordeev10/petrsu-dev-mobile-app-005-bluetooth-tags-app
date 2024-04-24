@@ -19,7 +19,10 @@ String jsonString = '''
           "status": 1,
           "found_exhibits": [
             1,
-            3
+            3,
+            2,
+            4,
+            5
           ],
           "completion_time": null
           },
@@ -40,7 +43,7 @@ Map<String, dynamic> getQuestsInfo() {
             "quest_id": 1,
             'description': 'Традиционная одежда, вышивка, укращения и ткачество',
             'stat': '0',
-            'img': 'lib/img/'+'background_image_1.jpg',
+            'img': 'lib/img/'+'background_image_3.jpg',
             // id экспонатов
             'exhibits' : {
                   // картинка экспонтата, информация про него, первый элемент - флаг (определяем вопрос или метка)
@@ -72,9 +75,9 @@ Map<String, dynamic> getQuestsInfo() {
 
           'Национальные блюда' : {
             "quest_id": 3,
-            'description': 'Традиционная одежда, вышивка, украшения и ткачество',
+            'description': 'Традиционные карельские блюда',
             'stat': '2',
-            'img': 'lib/img/' + 'background_image_3.jpg',
+            'img': 'lib/img/' + 'background_image_1.jpg',
             // id экспонатов
             'exhibits' : {
               // картинка экспонтата, информация про него, первый элемент - флаг (определяем вопрос или метка)

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:museum_app/modules/exhibit_module.dart';
+import 'modules/quests_module.dart';
 import 'userHomeScreen.dart';
 
 class userResultScreen extends StatelessWidget {
-  const userResultScreen({Key? key}) : super(key: key);
+  final int questId;
+  final String status;
+  const userResultScreen({Key? key, required this.questId, required this.status}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +45,8 @@ class userResultScreen extends StatelessWidget {
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {
+                        resetProgress(questId);
+                        setQuestStatus(questId, '2');
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => const userHomeScreen()),

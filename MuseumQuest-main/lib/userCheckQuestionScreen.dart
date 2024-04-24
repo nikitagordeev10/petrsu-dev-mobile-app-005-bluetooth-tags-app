@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:museum_app/modules/exhibit_module.dart';
+import 'package:museum_app/userQuestScreen.dart';
 
 class userCheckQuestionScreen extends StatefulWidget {
   final int questionIndex;
   final Function(bool) onAnswerSubmitted;
+  final List<int> foundExhibitsList;
+  final int questId;
 
   const userCheckQuestionScreen({
     Key? key,
     required this.questionIndex,
     required this.onAnswerSubmitted,
+    required this.foundExhibitsList,
+    required this.questId,
   }) : super(key: key);
 
   @override
-  _userCheckQuestionScreenState createState() => _userCheckQuestionScreenState();
+  _userCheckQuestionScreenState createState() => _userCheckQuestionScreenState(foundExhibitsList: this.foundExhibitsList, questId: this.questId);
 }
 
 class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
   TextEditingController _answerController = TextEditingController();
   String _errorMessage = '';
+  List<int> foundExhibitsList;
+  int questId;
+  _userCheckQuestionScreenState({required this.foundExhibitsList, required this.questId});
+
 
   bool _isCorrectAnswer(String answer) {
     return answer.trim() == '18';
@@ -103,6 +113,8 @@ class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
                       bool isCorrect = _isCorrectAnswer(answer);
                       if (isCorrect) {
                         widget.onAnswerSubmitted(true);
+                        foundExhibitsList.add(widget.questionIndex+1);
+                        saveProgress(widget.questionIndex, questId);
                         if (widget.questionIndex < 5) {
                           Navigator.pop(context);
                         }
