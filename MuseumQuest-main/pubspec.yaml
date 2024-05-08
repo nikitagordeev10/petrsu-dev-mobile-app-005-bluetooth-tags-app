@@ -34,7 +34,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  supabase_flutter: ^2.5.2
+  cloud_firestore:
+  firebase_core:
+  io:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -43,6 +46,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  intl: ^0.19.0
+  path_provider:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -81,7 +86,6 @@ flutter:
     - lib/img/icons/delete_small.png
     - lib/img/icons/edit.png
     - lib/img/logo/
-    - lib/assets/progress.json
 #    - lib/img/results_image.png
 #    - lib/img/support_image.png
 #    - lib/img/background_image_1.jpg

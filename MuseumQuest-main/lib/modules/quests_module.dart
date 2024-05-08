@@ -1,10 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:museum_app/ui_widgets/quest_widget.dart';
 import 'package:museum_app/controllers/db_controller.dart';
-
 import 'dart:convert';
+import 'package:path_provider/path_provider.dart';
 
 // возвращает список, содержащий списки вида: [название_кветса, описание_кветса, путь_до_фоновой_картинки]
 List<List<String>> getQuestsInformation() {
@@ -31,15 +30,7 @@ List<List<String>> getQuestsInformation() {
 
 // функция возвращает найденные пользователем экспонаты для одного квеста
 List<int> getFoundExhibits(int questId) {
-  // считываем данные из json файла
-  // File file = File('lib/assets/progress.json');
-  // String jsonString = file.readAsStringSync();
-
-  // Map<String, dynamic> jsonData = jsonDecode(jsonString);
-
-  var jsonData = jsonString;
-
-  var quests = jsonDecode(jsonData);
+  var quests = getQuestsInfo();
   List<int> resultList = [];
 
   for (var quest in quests["quests"])
@@ -59,9 +50,7 @@ List<int> getFoundExhibits(int questId) {
 
 // функция возвращает статус квеста
 String getQuestStatus(int questId) {
-  var jsonData = jsonString;
-  var data = json.decode(jsonData);
-
+  var data = getQuestsInfo();
   List<dynamic> quests = data['quests'];
   for (var quest in quests)
   {
@@ -74,39 +63,39 @@ String getQuestStatus(int questId) {
   return "0";
 }
 
-// запись нового статуса квеста
-void setQuestStatus(int questId, String newStatus)
+void setQuestStatus(int questId, String newStatus) async
 {
-  var jsonData = jsonString;
-  var data = json.decode(jsonData);
-
+  var data = getQuestsInfo();
   List<dynamic> quests = data['quests'];
-  for (var quest in quests)
-  {
-    if (quest["quest_id"] == questId)
-    {
-      quest["status"] = newStatus;
+  for (var quest in quests) {
+    if (quest["quest_id"] == questId) {
+      quest["stat"] = newStatus;
       break;
     }
   }
-  jsonString = json.encode(data);
+  final directory = await getApplicationDocumentsDirectory();
+  final path = await directory.path;
+  final file = await File('$path/progress.json');
+  file.writeAsString('$data');
 }
 
+// запись нового статуса квеста
+//setQuestStatus(1,"1");
+
 // сохранение прогресса прохождения незаконченного квеста
-// void saveProgress(List<int> newFoundExhibits, int questId)
-// {
-//   var jsonData = jsonString;
-//   var data = json.decode(jsonData);
-//
-//   List<dynamic> quests = data['quests'];
-//   for (var quest in quests)
-//   {
-//     if (quest["quest_id"] == questId)
-//     {
-//       quest["found_exhibits"] = newFoundExhibits;
-//       break;
-//     }
-//   }
-//
-//   jsonString = json.encode(data);
-// }
+//Future<File> saveProgress(List<int> newFoundExhibits, int questId) async
+//{
+//  var data = getQuestsInfo();
+//  List<dynamic> quests = data['quests'];
+//  for (var quest in quests) {
+//    if (quest["quest_id"] == questId) {
+//      quest["found_exhibits"] = newFoundExhibits;
+//      break;
+//    }
+//  }
+//  final directory = await getApplicationDocumentsDirectory();
+//  final path = await directory.path;
+//  final file = await File('$path/progress.json');
+//  return file.writeAsString('$counter');
+//}
+//saveProgress();

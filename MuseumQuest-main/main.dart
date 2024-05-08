@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:museum_app/userHomeScreen.dart';
 import 'package:museum_app/theme/theme.dart';
 import 'package:museum_app/SplashScreen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(const Main());
@@ -9,7 +12,6 @@ void main() {
 
 class Main extends StatelessWidget {
   const Main({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,16 +20,6 @@ class Main extends StatelessWidget {
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      /*routes: {
-        // '/': (context) => const userHomeScreen(),
-        //'/settings': (context) => const userSettingsScreen(),
-        '/quest': (context) => const userQuestScreen(),
-        '/result': (context) => const userResultScreen(),
-        '/exit': (context) => const userExitScreen(),
-        '/exhibit': (context) => const userExhibitScreen(),
-        '/question': (context) => const userCheckQuestionScreen(),
-        '/tracker': (context) => const userCheckBluetoothScreen(),
-      },*/
     );
   }
 }
