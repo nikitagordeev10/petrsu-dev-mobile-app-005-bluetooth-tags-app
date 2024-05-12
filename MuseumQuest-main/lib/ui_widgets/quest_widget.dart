@@ -1,89 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:museum_app/userQuestScreen.dart';
 
-class QuestCard extends StatelessWidget {
-  final String questId;
-  final String questName;
-  final String questDescription;
-  // questStatus - флаг прохождения квеста: 0 - не пройден, 1 - пройден
-  final String questStatus;
-  final String imgSrc;
-
-  QuestCard({required this.questId, required this.questName, required this.questDescription, required this.questStatus, required this.imgSrc});
-
-  void _QuestCardTapped(BuildContext contex) {
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context)
-            {
-              return userQuestScreen();
-            },
+Widget buildCardWithBackground(BuildContext context, String status, String imagePath, String title, String description, String buttonText, Widget destinationScreen, {Function()? onContinuePressed, Function()? onRestartPressed}) {
+  return Card(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(4.0),
+    ),
+    elevation: 4,
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.0),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Color(0xFF252836).withOpacity(0.8),
+            BlendMode.darken,
           ),
-        );
-      },
-      child: Container(
-        margin: EdgeInsets.all(5),
-        height: 125,
-        width: MediaQuery.of(context).size.width - 10,
-        decoration: BoxDecoration(
-          color: questStatus == '0' ? Color(0xff8687e7) : Color(0xff32d74b),
-          borderRadius: BorderRadius.circular(10),
         ),
-        child: Row(
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 15, left: 15),
-                    child: Text(
-                      questStatus == '0' ? questName : questName + '  +',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 15),
-                    child: Text(
-                      questDescription,
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+            SizedBox(height: 10),
+            Text(
+              description,
+              style: TextStyle(fontSize: 16, color: Colors.white),
+            ),
+            SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: MaterialButton(
+                      onPressed: onContinuePressed ?? () {},
+                      color: Color(0xFF1AACBC),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      clipBehavior: Clip.antiAlias,
+                      child: Text(buttonText, style: TextStyle(color: Colors.white)),
+                    ),
+                  ),
                 ),
-                child: Image.asset(
-                  imgSrc, // Путь к изображению квеста
-                  // fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height, // Высота изображения половину ширины экрана
-                ),
-              ),
+                if (status == '1')
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: MaterialButton(
+                        onPressed: onRestartPressed,
+                        color: Colors.transparent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                          side: BorderSide(color: Colors.white, width: 2),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Text('Начать сначала', style: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
 }

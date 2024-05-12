@@ -24,7 +24,8 @@ class userCheckBluetoothScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context)
                     {
-                      return const userQuestScreen();
+                      // TODO: поменять questId
+                      return const userQuestScreen(foundExhibitsList: [], questId: 1);
                     },
                   ),
                 );

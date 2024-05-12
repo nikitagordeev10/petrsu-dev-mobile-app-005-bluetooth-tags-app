@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/theme/theme.dart';
 import 'package:museum_app/userHomeScreen.dart';
-import 'package:museum_app/userSettingsScreen.dart';
+import 'package:museum_app/userSupportScreen.dart';
+import 'package:museum_app/adminHomeScreen.dart';
+import 'package:museum_app/adminExibitScreen.dart';
+import 'package:museum_app/adminTagsScreen.dart';
 
 class userMainScreen extends StatefulWidget {
   const userMainScreen({super.key});
@@ -13,14 +16,28 @@ class userMainScreen extends StatefulWidget {
 class _userMainScreenState extends State<userMainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    userHomeScreen(),
-    userSettingsScreen(),
-  ];
+  // 0 - пользователь, 1 - админ
+  int userStatus = 0;
+
+  final List<Widget> _screens = [];
+
+  getScreens() {
+    if (userStatus == 0)
+      return [
+        userHomeScreen(),
+        userSupportScreen()
+      ];
+    else if (userStatus == 1)
+      return [
+        adminHomeScreen(),
+        adminExibitScreen(),
+        adminTagsScreen()
+      ];
+  }
 
   void _onTapped(int index) {
     setState(() {
-        _selectedIndex = index;
+      _selectedIndex = index;
     });
   }
 
@@ -38,7 +55,7 @@ class _userMainScreenState extends State<userMainScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'Настройки',
+              label: 'Поддержка',
             ),
           ],
           currentIndex: _selectedIndex,

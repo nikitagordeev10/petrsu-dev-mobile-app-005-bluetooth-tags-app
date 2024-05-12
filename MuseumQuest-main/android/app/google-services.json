@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496826752335",
+    "project_id": "museumquest-fdee7",
+    "storage_bucket": "museumquest-fdee7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496826752335:android:0dda037b26fa434790793a",
+        "android_client_info": {
+          "package_name": "com.example.museum_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANhAr-cbOYKMrsNPoVg30SAANDdlgEVOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

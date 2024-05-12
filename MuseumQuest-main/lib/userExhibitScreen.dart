@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'userCheckBluetoothScreen.dart';
-import 'userCheckQuestionScreen.dart';
+import 'userHomeScreen.dart';
 class userExhibitScreen extends StatelessWidget {
   const userExhibitScreen({super.key});
 
@@ -25,7 +25,7 @@ class userExhibitScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context)
                     {
-                      return const userCheckQuestionScreen();
+                      return const userHomeScreen();
                     },
                   ),
                 );
