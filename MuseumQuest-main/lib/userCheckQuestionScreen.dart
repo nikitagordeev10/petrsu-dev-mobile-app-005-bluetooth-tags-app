@@ -108,13 +108,13 @@ class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       String answer = _answerController.text;
                       bool isCorrect = _isCorrectAnswer(answer);
                       if (isCorrect) {
                         widget.onAnswerSubmitted(true);
                         foundExhibitsList.add(widget.questionIndex+1);
-                        saveProgress(widget.questionIndex, questId);
+                        await saveProgress(widget.questionIndex, questId);
                         if (widget.questionIndex < 5) {
                           Navigator.pop(context);
                         }

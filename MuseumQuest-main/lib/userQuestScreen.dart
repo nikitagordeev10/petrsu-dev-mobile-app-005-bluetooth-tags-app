@@ -18,15 +18,26 @@ class userQuestScreen extends StatefulWidget {
 class _userQuestScreenState extends State<userQuestScreen> {
   List<int> foundExhibitsList;
   int questId;
-  _userQuestScreenState({required this.foundExhibitsList, required this.questId});
   List<bool> _isCardCorrect = [];
+  _userQuestScreenState({required this.foundExhibitsList, required this.questId});
 
+void _loadCorrectCards() async {
+  var cards = await getCorrectCardList(foundExhibitsList);
+  setState(() {
+    _isCardCorrect = cards;
+  });
+}
+  @override
+  void initState() {
+    super.initState();
+    // Инициализация _isCardCorrect здесь, если это возможно, или внутри Future.delayed
+    _loadCorrectCards();
+  }
   @override
   Widget build(BuildContext context) {
-    _isCardCorrect = getCorrectCardList(foundExhibitsList);
     double screenWidth = MediaQuery.of(context).size.width;
-    double cardWidth = (screenWidth - 40) / 2; // Делим ширину экрана пополам и вычитаем отступы между карточками
-    double cardHeight = cardWidth + 45; // Высота карточки равна ширине изображения плюс высота кнопки
+    double cardWidth = (screenWidth - 40) / 2;
+    double cardHeight = cardWidth + 45;
 
     return WillPopScope(
       onWillPop: () async {
@@ -34,7 +45,7 @@ class _userQuestScreenState extends State<userQuestScreen> {
           context: context,
           builder: (context) => userExitScreen(foundExhibits: foundExhibitsList, questId: questId),
         );
-        return false; // Returning false prevents the back operation
+        return false;
       },
       child: Scaffold(
         appBar: AppBar(
@@ -42,30 +53,49 @@ class _userQuestScreenState extends State<userQuestScreen> {
           centerTitle: true,
         ),
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: ListView(
-                  shrinkWrap: true,
+          child: FutureBuilder<List<bool>>(
+            future: getCorrectCardList(foundExhibitsList), // Здесь указываем Future, который нужно дождаться
+            builder: (BuildContext context, AsyncSnapshot<List<bool>> snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                // Пока ждём данные, показываем индикатор загрузки
+                return Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                // Если произошла ошибка, показываем текст ошибки
+                return Center(child: Text('Ошибка: ${snapshot.error}'));
+              } else if (snapshot.hasData) {
+                // Когда данные получены, строим интерфейс
+                _isCardCorrect = snapshot.data!;
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Wrap(
-                      alignment: WrapAlignment.spaceEvenly,
-                      children: List.generate(
-                        6,
-                            (index) => buildExhibitCard(
-                          context,
-                          index + 1, // Добавляем 1, чтобы начать с quest_1.jpg
-                          index, // Передаём индекс вопроса
-                          cardWidth,
-                          cardHeight,
-                        ),
+                    Expanded(
+                      child: ListView(
+                        shrinkWrap: true,
+                        children: [
+                          Wrap(
+                            alignment: WrapAlignment.spaceEvenly,
+                            children: List.generate(
+                              6,
+                                  (index) => buildExhibitCard(
+                                context,
+                                index + 1,
+                                index,
+                                cardWidth,
+                                cardHeight,
+ // Используем данные из snapshot
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
-                ),
-              ),
-            ],
+                );
+              } else {
+                // Если данных нет, показываем сообщение об этом
+                return Center(child: Text('Нет данных'));
+              }
+            },
           ),
         ),
       ),

@@ -86,6 +86,8 @@ flutter:
     - lib/img/icons/delete_small.png
     - lib/img/icons/edit.png
     - lib/img/logo/
+    - lib/assets/
+    - lib/assets/progress.json
 #    - lib/img/results_image.png
 #    - lib/img/support_image.png
 #    - lib/img/background_image_1.jpg

@@ -17,13 +17,23 @@ class userHomeScreen extends StatefulWidget {
 
 class _userHomeScreenState extends State<userHomeScreen> {
   int _selectedIndex = 0;
-  List<List<String>> questInfoList = getQuestsInformation();
-
+  List<List<String>> questInfoList = []; //getQuestsInformation();
   final List<Widget> _screens = [
     userHomeScreen(),
     userSupportScreen(), // Замененный элемент
   ];
+  @override
+  void initState() {
+    super.initState();
+    _loadQuestInfo();
+  }
 
+  void _loadQuestInfo() async {
+      var quests = await getQuestsInformation();
+        setState(() {
+          questInfoList = quests;
+        });
+  }
   void _onTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -38,10 +48,10 @@ class _userHomeScreenState extends State<userHomeScreen> {
   }
 
   // получаем список виджетов для квестов
-  List<Widget> getQuestWidgetList()
+  Future<List<Widget>> getQuestWidgetList() async
   {
     List<Widget> questWidgetList = [];
-    List<List<String>> questInfoList = getQuestsInformation();
+    List<List<String>> questInfoList = await getQuestsInformation();
 
     for (final element in questInfoList)
     {
@@ -49,7 +59,7 @@ class _userHomeScreenState extends State<userHomeScreen> {
       String title = element[1];
       String description = element[2];
       String imagePath = element[3];
-      String status = getQuestStatus(id);
+      String status = await getQuestStatus(id);
       String buttonText;
       Widget destinationScreen;
       List<int> foundExhibitsList = [];
@@ -62,7 +72,7 @@ class _userHomeScreenState extends State<userHomeScreen> {
       else if (status == '1')
       {
         buttonText = 'Продолжить';
-        foundExhibitsList = getFoundExhibits(id);
+        foundExhibitsList = await getFoundExhibits(id);
         destinationScreen = userQuestScreen(foundExhibitsList: foundExhibitsList, questId: id);
       }
       else {
@@ -101,8 +111,8 @@ class _userHomeScreenState extends State<userHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> widgetList = [];
-    widgetList = getQuestWidgetList();
+    //List<Widget> widgetList = [];
+    //widgetList = getQuestWidgetList();
     return MaterialApp(
       theme: themeData,
       home: Scaffold(
@@ -112,12 +122,20 @@ class _userHomeScreenState extends State<userHomeScreen> {
           centerTitle: true, // Выровнять заголовок по центру
           title: Text('Квесты'),
         ),
-        body: ListView.builder(
-          itemCount: widgetList.length,
-          itemBuilder: (BuildContext context, int index)
-          {
-            return widgetList[index];
-          }
+        //body: ListView.builder(
+          body: FutureBuilder(
+            future: getQuestWidgetList(),
+          builder: (BuildContext context, AsyncSnapshot<List<Widget>> snapshot) {
+                   if (snapshot.connectionState == ConnectionState.waiting) {
+                       return CircularProgressIndicator(); // Индикатор загрузки
+                   } else if (snapshot.hasError) {
+                     return Text('Ошибка: ${snapshot.error}'); // Отображение ошибки
+                   } else {
+                     return ListView.builder(itemCount: snapshot.data?.length ?? 0,
+    itemBuilder: (BuildContext context, int index) {return snapshot.data![index];},
+    );
+    }
+    },
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[

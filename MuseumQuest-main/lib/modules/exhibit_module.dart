@@ -4,10 +4,10 @@ import '../controllers/db_controller.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:museum_app/ui_widgets/quest_widget.dart';
+import 'dart:convert';
 
-List<bool> getCorrectCardList(List<int> foundExhibitsList) {
+Future<List<bool>> getCorrectCardList(List<int> foundExhibitsList) async{
   List<bool> correctCardList = [];
-
   for (int i = 0; i < 6; i++)
     correctCardList.add(false);
 
@@ -17,12 +17,11 @@ List<bool> getCorrectCardList(List<int> foundExhibitsList) {
 
   return correctCardList;
 }
-
 // сохранение прогресса (запись экспоната с индексом index в переменную found_exhibits json файла)
 // TODO поработать со статусами квеста
-void saveProgress(int index, int questId) async
+Future<void> saveProgress(int index, int questId) async
 {
-  var data = getQuestsInfo();
+  var data = await readJson();
   List<dynamic> quests = data['quests'];
   for (var quest in quests)
   {
@@ -32,16 +31,17 @@ void saveProgress(int index, int questId) async
       break;
     }
   }
+  var data1 = jsonEncode(data);
   final directory = await getApplicationDocumentsDirectory();
   final path = await directory.path;
   final file = await File('$path/progress.json');
-  file.writeAsString('$data');
+  await file.writeAsString(data1);
 }
 
 // сброс прогресса
-void resetProgress(int questId) async
+Future<void> resetProgress(int questId) async
 {
-  var data = getQuestsInfo();
+  var data = await readJson();
   List<dynamic> quests = data['quests'];
   for (var quest in quests)
   {
@@ -51,8 +51,9 @@ void resetProgress(int questId) async
       break;
     }
   }
+  var data1 = jsonEncode(data);
   final directory = await getApplicationDocumentsDirectory();
   final path = await directory.path;
   final file = await File('$path/progress.json');
-  file.writeAsString('$data');
+  await file.writeAsString(data1);
 }
