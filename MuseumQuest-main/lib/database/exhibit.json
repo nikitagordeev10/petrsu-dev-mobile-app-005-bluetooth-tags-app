@@ -1,52 +1,152 @@
 [
   {
     "id": 1,
-    "name": "exhibit1",
-    "imgLink": "https://drive.google.com/file/d/1IK4E7kI7T5wlFc8NAIpN9rdJbAdWS3jr/view?usp=drive_link",
-    "idExtraQuestion": 1,
-    "idBluetoothTag": 1
+    "name": "Печь",
+    "description": "Описание",
+    "img": "lib/img/exhibits/bake.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   },
   {
     "id": 2,
-    "name": "exhibit2",
-    "img": "lib/img/background_image_2.jpg",
-    "imgLink": "https://drive.google.com/file/d/18rtiNee4gH16Y1MXN9CbjJUi6DpxyWb-/view?usp=drive_link",
-    "idExtraQuestion": 2,
-    "idBluetoothTag": 2
+    "name": "Молоток",
+    "description": "Описание",
+    "img": "lib/img/exhibits/hammer.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   },
   {
     "id": 3,
-    "name": "exhibit3",
-    "imgLink": "https://drive.google.com/file/d/1qvNcj72ewP-7scrddE28BW2twzbZyaK_/view?usp=drive_link",
-    "idExtraQuestion": 3,
-    "idBluetoothTag": 1
+    "name": "Пляж",
+    "description": "Описание",
+    "img": "lib/img/exhibits/beach.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   },
   {
     "id": 4,
-    "name": "exhibit4",
-    "imgLink": "https://drive.google.com/file/d/1PaLCPXZKYPw5YHwZTQzIxMLWGaRX8H-L/view?usp=drive_link",
-    "idExtraQuestion": 4,
-    "idBluetoothTag": 3
-  },
-  {
-    "id": 6,
-    "name": "exhibit6",
-    "imgLink": "https://drive.google.com/file/d/1WNdCQjJOCI7v5tK__jEBAvkL9UUQ6IdN/view?usp=drive_link",
-    "idExtraQuestion": 6,
-    "idBluetoothTag": 2
+    "name": "Украшения",
+    "description": "Описание",
+    "img": "lib/img/exhibits/decoration.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   },
   {
     "id": 5,
-    "name": "exhibit5",
-    "imgLink": "https://drive.google.com/file/d/1h0y1sWgzmyGEAxbSltTTfCZZsFwYxllm/view?usp=drive_link",
-    "idExtraQuestion": 5,
-    "idBluetoothTag": 1
+    "name": "Основатели Петрозаводска",
+    "description": "Описание",
+    "img": "lib/img/exhibits/founders.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 6,
+    "name": "Камень",
+    "description": "Описание",
+    "img": "lib/img/exhibits/stone.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   },
   {
     "id": 7,
-    "name": "exhibit7",
-    "imgLink": "https://drive.google.com/file/d/1PeamVI9Yw_QtCjSM-NvL43vuzHJwh7X4/view?usp=drive_link",
-    "idExtraQuestion": 7,
-    "idBluetoothTag": 1
+    "name": "Корона",
+    "description": "Описание",
+    "img": "lib/img/exhibits/crown.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 8,
+    "name": "Ткацкий станок",
+    "description": "Описание",
+    "img": "lib/img/exhibits/weaving_machine.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 9,
+    "name": "Вышивка",
+    "description": "Описание",
+    "img": "lib/img/exhibits/embroidery.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 10,
+    "name": "Посуда",
+    "description": "Описание",
+    "img": "lib/img/exhibits/dishes.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 11,
+    "name": "Брусничный пирог",
+    "description": "Описание",
+    "img": "lib/img/exhibits/lingonberry_pie.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 12,
+    "name": "Рыба",
+    "description": "Описание",
+    "img": "lib/img/exhibits/fish.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 13,
+    "name": "Калитки",
+    "description": "Небольшой открытый ржаной пирожок на тонком тесте с начинкой",
+    "img": "lib/img/exhibits/wickets.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 14,
+    "name": "Каларуока",
+    "description": "Карельская уха",
+    "img": "lib/img/exhibits/kalaruoka.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
+  },
+  {
+    "id": 15,
+    "name": "Cканцы",
+    "description": "Традиционные карельские лепёшки",
+    "img": "lib/img/exhibits/scans.png",
+    "textQuestion": "Какого века макет?",
+    "textQuestionAnswer": "18",
+    "checkingByBluetoothTag": 0,
+    "idBluetoothTag": 0
   }
 ]
