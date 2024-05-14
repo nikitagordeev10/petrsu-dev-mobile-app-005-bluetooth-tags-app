@@ -91,12 +91,14 @@ class _userHomeScreenState extends State<userHomeScreen> {
             buttonText,
             destinationScreen,
             onContinuePressed: () {
+              startTimer();
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => destinationScreen),
               );
             },
             onRestartPressed: () {
+              setQuestTime(id, Future.value(0));
               if (status == '1')
               {
                 Navigator.push(

@@ -62,6 +62,8 @@ class userExitScreen extends StatelessWidget {
             child: OutlinedButton(
               onPressed: () async {
                 await setQuestStatus(questId, '1');
+                stopTimer();
+                setQuestTime(questId, getResultTime(questId));
                 Navigator.push(
                   context,
                   MaterialPageRoute(

@@ -6,6 +6,8 @@ import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+// переменные для таймера
+int startTime = 0, finishTime = 0, resultTime = 0;
 
 // возвращает список, содержащий списки вида: [название_квеста, описание_квеcта, путь_до_фоновой_картинки]
 Future<List<List<String>>> getQuestsInformation() async {
@@ -102,4 +104,96 @@ Future<void> setQuestStatus(int questId, String newStatus) async
   final path = await directory.path;
   final file = await File('$path/progress.json');
   await file.writeAsString(data1);
+}
+
+// получение информации о квесте
+Future<String> getQuestInfo(int questId,
+    {
+      String? questInfo
+    }
+    )
+async {
+  var data = await readJson();
+
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests)
+  {
+    if (quest["quest_id"] == questId)
+    {
+      switch(questInfo)
+      {
+        case "status":
+          return quest["status"].toString();
+        case "time":
+          return quest["completion_time"].toString();
+        default:
+          return '';
+      }
+    }
+  }
+  return '';
+}
+
+// ------------------------------ таймер ------------------------------
+void startTimer() {
+  startTime = DateTime.now().millisecondsSinceEpoch;
+}
+
+void stopTimer() {
+  finishTime = DateTime.now().millisecondsSinceEpoch;
+}
+
+Future<void> setQuestTime(int questId, Future<int> resultTimeF) async
+{
+  int resultTime = await resultTimeF;
+  var data = await readJson();
+  List<dynamic> quests = data['quests'];
+  for (var quest in quests) {
+    if (quest["quest_id"] == questId) {
+      quest["completion_time"] = resultTime;
+      break;
+    }
+  }
+  var data1 = jsonEncode(data);
+  final directory = await getApplicationDocumentsDirectory();
+  final path = await directory.path;
+  final file = await File('$path/progress.json');
+  await file.writeAsString(data1);
+}
+
+// переделать функцию на void????
+Future<int> getResultTime(int questId)
+async {
+  int prevResultTime = 0;
+  String prevQuestTime = await getQuestInfo(questId, questInfo: "time");
+
+  // если квест был продолжен, то получаем предыдущее время прохождения
+  if (await getQuestInfo(questId, questInfo: "status") == '1')
+  {
+    if(prevQuestTime != 'null')
+    {
+      prevResultTime = int.parse(prevQuestTime);
+    }
+  }
+
+  if (startTime != 0 && finishTime != 0)
+  {
+    // получаем результат в минутах
+    resultTime = (prevResultTime + (finishTime - startTime) ~/ 60000);
+    // записываем результат в минутах
+     setQuestTime(questId, Future.value(resultTime));
+    // возвращаем результат в минутах
+    return resultTime;
+  }
+  return 0;
+}
+
+Future<String> getMessage(int questId) async {
+  if (resultTime != null)
+  {
+    if (await getResultTime(questId) == 0)
+      return 'Поздравляем! \nНа прохождение квеста\nвам потребовалось меньше минуты!';
+    return 'Поздравляем! \nНа прохождение квеста\nвам потребовалось ≈ $resultTime мин';
+  }
+  return '';
 }
