@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:museum_app/theme/theme.dart';
+import 'package:museum_app/views/theme/theme.dart';
 import 'package:museum_app/views/user/userHomeScreen.dart';
 import 'package:museum_app/views/user/userSupportScreen.dart';
 import 'package:museum_app/views/admin/adminHomeScreen.dart';

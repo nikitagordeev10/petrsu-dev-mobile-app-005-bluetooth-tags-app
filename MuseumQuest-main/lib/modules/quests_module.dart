@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:museum_app/ui_widgets/quest_widget.dart';
+import 'package:museum_app/views/ui_widgets/quest_widget.dart';
 import 'package:museum_app/controllers/db_controller.dart';
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
