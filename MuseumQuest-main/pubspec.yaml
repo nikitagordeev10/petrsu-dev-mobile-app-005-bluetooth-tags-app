@@ -95,6 +95,7 @@ flutter:
     - lib/assets/progress.json
     - lib/assets/
     - lib/database/
+    - lib/views/img/quests/
 
   #    - lib/views/img/results_image.png
 #    - lib/views/img/support_image.png

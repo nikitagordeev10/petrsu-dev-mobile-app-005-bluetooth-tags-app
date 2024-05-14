@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 
-// возвращает список, содержащий списки вида: [название_кветса, описание_кветса, путь_до_фоновой_картинки]
+// возвращает список, содержащий списки вида: [название_квеста, описание_квеcта, путь_до_фоновой_картинки]
 Future<List<List<String>>> getQuestsInformation() async {
   // Загрузка JSON-файла из папки assets
   final data = await rootBundle.load('lib/database/quests.json');

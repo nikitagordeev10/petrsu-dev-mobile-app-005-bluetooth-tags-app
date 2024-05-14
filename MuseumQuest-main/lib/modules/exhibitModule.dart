@@ -17,8 +17,7 @@ Future<List<bool>> getCorrectCardList(List<int> foundExhibitsList) async{
 
   return correctCardList;
 }
-// сохранение прогресса (запись экспоната с индексом index в переменную found_exhibits json файла)
-// TODO поработать со статусами квеста
+
 Future<void> saveProgress(int index, int questId) async
 {
   var data = await readJson();

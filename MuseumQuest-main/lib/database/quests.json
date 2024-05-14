@@ -3,21 +3,21 @@
     "quest_id": 1,
     "description": "Традиционная одежда, вышивка, укращения и ткачество",
     "stat": "0",
-    "img": "lib/quests/clothes.jpg",
+    "img": "lib/views/img/quests/clothes.jpg",
     "exhibits_id": [4, 5, 6, 7, 8, 9]
     },
   "Изобретения": {
     "quest_id": 2,
     "description": "Лодки, инструменты, украшения из меди и многое другое",
     "stat": "1",
-    "img": "lib/quests/inventions.jpg",
+    "img": "lib/views/img/quests/inventions.jpg",
     "exhibits": [1, 2, 4, 5, 6, 8]
   },
   "Национальные блюда": {
     "quest_id": 3,
     "description": "Традиционные карельские блюда",
     "stat": "2",
-    "img": "lib/quests/food.jpg",
+    "img": "lib/views/img/quests/food.jpg",
     "exhibits": [10, 11, 12, 13, 14, 15]
   }
 }
