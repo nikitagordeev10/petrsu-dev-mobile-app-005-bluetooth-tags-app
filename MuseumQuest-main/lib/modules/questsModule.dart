@@ -22,16 +22,39 @@ Future<List<List<String>>> getQuestsInformation() async {
   // По всем квестам, где key - название квеста, а value - информация о квесте
   for (final entry in questsJson.entries) {
     var id = entry.value['quest_id'].toString();
-    String description = entry.value['description'];
-    String imagePath = entry.value['img'];
-    String status = entry.value['stat'];
-    questInfoList.add([id, entry.key, description, imagePath, status]);
+    String description = entry.value['description'].toString();
+    String imagePath = entry.value['img'].toString();
+    String status = entry.value['stat'].toString();
+    String exhibits = entry.value['exhibits'].toString();
+    questInfoList.add([id, entry.key, description, imagePath, status, exhibits]);
   }
   return questInfoList;
 }
 
 // TODO: функция для получения дельты между скачанными квестами и квестами пользователя
 
+
+// функция получения списка айдишников экспонатов для квеста
+Future<List<int>> getQuestExhibits(int questId) async {
+  List<int> exhibitList = [];
+  List<List<String>> questInfo = await getQuestsInformation();
+
+  for (int i = 0; i < questInfo.length; i++)
+    {
+      if (questId == int.parse(questInfo[i][0]))
+        {
+          final String exhibitDynamic = questInfo[i][5];
+          exhibitList = exhibitDynamic
+              .replaceAll('[', '')
+              .replaceAll(']', '')
+              .split(', ')
+              .map(int.parse)
+              .toList();
+        }
+    }
+
+  return exhibitList;
+}
 
 // функция возвращает найденные пользователем экспонаты для одного квеста
 Future<List<int>> getFoundExhibits(int questId) async{
