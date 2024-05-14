@@ -12,12 +12,12 @@ class Quest {
     required this.description,
     required this.image});
 
-
-// factory Quest.fromSqfliteDatabase(Map<String, dynamic> map) => Quest(
-//   id: map['id']?.toInt() ?? 0,
-//   name: map['name'] ?? '',
-//   description: map['description'] ?? '',
-//   image: map['image'] ?? '',
-// );
-
+  factory Quest.fromList(List<String> questInfo) {
+    return Quest(
+      // id: int.parse(questInfo[0]),
+      name: questInfo[1],
+      description: questInfo[2],
+      image: File(questInfo[3]),
+    );
+  }
 }

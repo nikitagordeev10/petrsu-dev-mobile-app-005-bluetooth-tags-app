@@ -6,6 +6,7 @@ import 'package:museum_app/views/user/userCheckBluetoothScreen.dart'; // Шаг 
 import 'package:museum_app/views/user/userCheckQuestionScreen.dart'; // Шаг 1: Импорт файла
 import 'adminTagsScreen.dart';
 import 'adminExibitAdd1Screen.dart';
+import 'package:museum_app/modules/exhibitModule.dart';
 
 class adminExibitScreen extends StatefulWidget {
   const adminExibitScreen({Key? key});
@@ -15,8 +16,18 @@ class adminExibitScreen extends StatefulWidget {
 }
 
 class _adminExibitScreenState extends State<adminExibitScreen> {
-  List<bool> _isCardCorrect = List.generate(6, (index) => false);
-  int _selectedIndex = 1;
+  List<List<String>> exhibitsList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadExhibits();
+  }
+
+  void _loadExhibits() async {
+    exhibitsList = await getExhibitsInfo();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +62,10 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                     Wrap(
                       alignment: WrapAlignment.spaceEvenly,
                       children: List.generate(
-                        6,
+                        exhibitsList.length,
                             (index) => _buildExhibitCard(
                           context,
-                          index + 1, // Добавляем 1, чтобы начать с quest_1.jpg
+                          exhibitsList[index],
                           index, // Передаём индекс вопроса
                           cardWidth,
                           cardHeight,
@@ -64,13 +75,33 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: ElevatedButton(
+                  onPressed: _navigateToAddExibit,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    backgroundColor: Color(0xFF1AACBC),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Добавить экспонат',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Color(0xFF252836),
           selectedItemColor: Color(0xFF1AACBC), // Цвет выделенной вкладки
-          currentIndex: _selectedIndex,
+          currentIndex: 1,
           onTap: _onItemTapped,
           items: [
             BottomNavigationBarItem(
@@ -91,9 +122,21 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
     );
   }
 
+  void _navigateToAddExibit() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => adminExibitAdd1Screen()),
+    );
+
+    // if (result != null) {
+    //   setState(() {
+    //     _quests.add(result as Quest);
+    //   });
+    // }
+  }
+
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
       if (index == 0) { // Проверяем, что нажата вторая вкладка (индекс 1)
         Navigator.push(
           context,
@@ -117,12 +160,12 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
 
   Widget _buildExhibitCard(
       BuildContext context,
-      int questNumber,
-      int questionIndex, // Индекс вопроса
+      List<String> exhibit,
+      int index, // Индекс вопроса
       double cardWidth,
       double cardHeight,
       ) {
-    final String imagePath = 'lib/views/img/quest/quest_$questNumber.png';
+    final String imagePath = exhibit[3]; // Change this to the index of image path in your exhibit data
     final String magnifyingGlassIcon = 'lib/views/img/icons/magnifying_glass.png'; // Иконка лупы
     final String deleteIcon = 'lib/views/img/icons/delete_small.png'; // Иконка удаления
     final String editIcon = 'lib/views/img/icons/edit.png'; // Иконка редактирования
@@ -136,7 +179,7 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
           borderRadius: BorderRadius.circular(10),
         ),
         elevation: 4,
-        color: _isCardCorrect[questionIndex] ? Colors.green : null,
+        color: false ? Colors.green : null,
         child: Stack(
           alignment: Alignment.topRight, // Выравниваем иконки в правом верхнем углу
           children: [
@@ -168,7 +211,7 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                     ),
                   ),
                 ),
-                if (_isCardCorrect[questionIndex])
+                if (false)
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(
@@ -181,7 +224,7 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                       ),
                     ),
                   ),
-                if (!_isCardCorrect[questionIndex])
+                if (!false)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Row(
@@ -199,9 +242,9 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                                MaterialPageRoute(
-                                  builder: (context) => adminExibitAdd1Screen(),
-                                ),
+                              MaterialPageRoute(
+                                builder: (context) => adminExibitAdd1Screen(),
+                              ),
                             );
                           },
                           child: Image.asset(
@@ -261,6 +304,3 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
     );
   }
 }
-
-
-
