@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'adminHomeScreen.dart'; // Импорт страницы администратора
+import 'package:museum_app/views/admin/adminHomeScreen.dart'; // Импорт страницы администратора
 
 void main() {
   runApp(const MaterialApp(

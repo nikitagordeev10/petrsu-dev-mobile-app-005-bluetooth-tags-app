@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'userQuestScreen.dart';
+import 'package:museum_app/views/user/userQuestScreen.dart';
 class userCheckBluetoothScreen extends StatelessWidget {
   const userCheckBluetoothScreen({super.key});
 

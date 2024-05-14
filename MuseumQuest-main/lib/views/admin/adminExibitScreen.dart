@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'adminHomeScreen.dart';
-import 'userExitScreen.dart';
-import 'userResultScreen.dart';
-import 'userCheckBluetoothScreen.dart'; // Шаг 1: Импорт файла
-import 'userCheckQuestionScreen.dart'; // Шаг 1: Импорт файла
+import 'package:museum_app/views/user/userNoteExitScreen.dart';
+import 'package:museum_app/views/user/userResultScreen.dart';
+import 'package:museum_app/views/user/userCheckBluetoothScreen.dart'; // Шаг 1: Импорт файла
+import 'package:museum_app/views/user/userCheckQuestionScreen.dart'; // Шаг 1: Импорт файла
 import 'adminTagsScreen.dart';
-import 'adminExibitAddScreen.dart';
+import 'adminExibitAdd1Screen.dart';
 
 class adminExibitScreen extends StatefulWidget {
   const adminExibitScreen({Key? key});
@@ -200,7 +200,7 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
                             Navigator.push(
                               context,
                                 MaterialPageRoute(
-                                  builder: (context) => adminExibitAddScreen(),
+                                  builder: (context) => adminExibitAdd1Screen(),
                                 ),
                             );
                           },

@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: adminExibitAddScreen(),
+    home: adminExibitAdd1Screen(),
   ));
 }
 
-class adminExibitAddScreen extends StatefulWidget {
-  const adminExibitAddScreen({Key? key}) : super(key: key);
+class adminExibitAdd1Screen extends StatefulWidget {
+  const adminExibitAdd1Screen({Key? key}) : super(key: key);
 
   @override
-  _adminExibitAddScreenState createState() => _adminExibitAddScreenState();
+  _adminExibitAdd1ScreenState createState() => _adminExibitAdd1ScreenState();
 }
 
-class _adminExibitAddScreenState extends State<adminExibitAddScreen> {
+class _adminExibitAdd1ScreenState extends State<adminExibitAdd1Screen> {
   TextEditingController exhibitNameController = TextEditingController();
   TextEditingController questionController = TextEditingController();
   TextEditingController answerController = TextEditingController();

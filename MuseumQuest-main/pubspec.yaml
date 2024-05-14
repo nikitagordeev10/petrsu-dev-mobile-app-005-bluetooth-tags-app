@@ -25,15 +25,20 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.3.0 <4.0.0'
 
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
 dependencies:
   flutter:
     sdk: flutter
+#  flutter_blue:
+  get:
+  permission_handler:
   supabase_flutter: ^2.5.2
   cloud_firestore:
   firebase_core:
@@ -65,7 +70,7 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "lib/img/logo/logo_round.png"
+  image_path: "lib/views/img/logo/logo_round.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 
@@ -80,33 +85,33 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/img/
-    - lib/img/quest/
-    - lib/img/icons/
-    - lib/img/icons/delete_small.png
-    - lib/img/icons/edit.png
-    - lib/img/logo/
+    - lib/views/img/
+    - lib/views/img/quest/
+    - lib/views/img/icons/
+    - lib/views/img/icons/delete_small.png
+    - lib/views/img/icons/edit.png
+    - lib/views/img/logo/
     - lib/assets/
     - lib/assets/progress.json
-#    - lib/img/results_image.png
-#    - lib/img/support_image.png
-#    - lib/img/background_image_1.jpg
-#    - lib/img/background_image_2.jpg
-#    - lib/img/background_image_3.jpg
-#    - lib/img/quest/quest_1.png
-#    - lib/img/quest/quest_2.png
-#    - lib/img/quest/quest_3.png
-#    - lib/img/quest/quest_4.png
-#    - lib/img/quest/quest_5.png
-#    - lib/img/quest/quest_6.png
-#    - lib/img/icons/exit.png
-#    - lib/img/icons/new_version.png
-#    - lib/img/icons/bluetooth_search.png
-#    - lib/img/icons/bluetooth_no_connection.png
-#    - lib/img/icons/magnifying_glass.png
-#    - lib/img/icons/support.png
-#    - lib/img/icons/quests.png
-#    - lib/img/icons/delete.png
+#    - lib/views/img/results_image.png
+#    - lib/views/img/support_image.png
+#    - lib/views/img/background_image_1.jpg
+#    - lib/views/img/background_image_2.jpg
+#    - lib/views/img/background_image_3.jpg
+#    - lib/views/img/quest/quest_1.png
+#    - lib/views/img/quest/quest_2.png
+#    - lib/views/img/quest/quest_3.png
+#    - lib/views/img/quest/quest_4.png
+#    - lib/views/img/quest/quest_5.png
+#    - lib/views/img/quest/quest_6.png
+#    - lib/views/img/icons/exit.png
+#    - lib/views/img/icons/new_version.png
+#    - lib/views/img/icons/bluetooth_search.png
+#    - lib/views/img/icons/bluetooth_no_connection.png
+#    - lib/views/img/icons/magnifying_glass.png
+#    - lib/views/img/icons/support.png
+#    - lib/views/img/icons/quests.png
+#    - lib/views/img/icons/delete.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

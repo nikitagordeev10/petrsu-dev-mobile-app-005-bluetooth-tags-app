@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/theme/theme.dart';
-import 'package:museum_app/userHomeScreen.dart';
-import 'package:museum_app/userSupportScreen.dart';
-import 'package:museum_app/userQuestScreen.dart';
-import 'package:museum_app/userNewQuestVersion.dart';
-import 'package:museum_app/userQuestWasDeleted.dart';
+import 'userHomeScreen.dart';
+import 'userSupportScreen.dart';
+import 'userQuestScreen.dart';
+import 'userNoteNewQuestVersion.dart';
+import 'userNoteQuestWasDeleted.dart';
 import 'package:museum_app/ui_widgets/quest_widget.dart';
 import 'package:museum_app/modules/quests_module.dart';
 

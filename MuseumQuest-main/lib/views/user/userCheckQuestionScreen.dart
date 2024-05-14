@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/modules/exhibit_module.dart';
-import 'package:museum_app/userQuestScreen.dart';
+import 'userQuestScreen.dart';
 
 class userCheckQuestionScreen extends StatefulWidget {
   final int questionIndex;

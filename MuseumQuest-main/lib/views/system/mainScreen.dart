@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/theme/theme.dart';
-import 'package:museum_app/userHomeScreen.dart';
-import 'package:museum_app/userSupportScreen.dart';
-import 'package:museum_app/adminHomeScreen.dart';
-import 'package:museum_app/adminExibitScreen.dart';
-import 'package:museum_app/adminTagsScreen.dart';
+import 'package:museum_app/views/user/userHomeScreen.dart';
+import 'package:museum_app/views/user/userSupportScreen.dart';
+import 'package:museum_app/views/admin/adminHomeScreen.dart';
+import 'package:museum_app/views/admin/adminExibitScreen.dart';
+import 'package:museum_app/views/admin/adminTagsScreen.dart';
 
 class userMainScreen extends StatefulWidget {
   const userMainScreen({super.key});

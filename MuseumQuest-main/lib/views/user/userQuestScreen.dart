@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/modules/quests_module.dart';
-import 'modules/exhibit_module.dart';
-import 'userExitScreen.dart';
+import 'package:museum_app/modules/exhibit_module.dart';
+import 'userNoteExitScreen.dart';
 import 'userResultScreen.dart';
 import 'userCheckBluetoothScreen.dart';
 import 'userCheckQuestionScreen.dart';

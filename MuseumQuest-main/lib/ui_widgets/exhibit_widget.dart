@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../userCheckQuestionScreen.dart';
+import '../views/user/userCheckQuestionScreen.dart';
 
 /*
 Widget buildExhibitCard(

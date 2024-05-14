@@ -1,21 +1,20 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:museum_app/modules/tags.dart';
+import 'adminTagsScreen.dart';
 
-import 'adminHomeScreen.dart';
-
-class adminQuestAddScreen extends StatefulWidget {
-  const adminQuestAddScreen({Key? key}) : super(key: key);
+class adminTagAddScreen extends StatefulWidget {
+  const adminTagAddScreen({Key? key}) : super(key: key);
 
   @override
-  _adminQuestAddScreenState createState() => _adminQuestAddScreenState();
+  _adminTagAddScreenState createState() => _adminTagAddScreenState();
 }
 
-class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
-  TextEditingController exhibitNameController = TextEditingController();
-  TextEditingController questionController = TextEditingController();
-  TextEditingController answerController = TextEditingController();
-  List<TextEditingController> additionalAnswerControllers = [];
+class _adminTagAddScreenState extends State<adminTagAddScreen> {
+  TextEditingController tagNameController = TextEditingController();
+  TextEditingController tagIDController = TextEditingController();
+  TextEditingController tagStatusController = TextEditingController();
 
   String? confirmationType;
 
@@ -29,27 +28,20 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
 
   void _save() {
     // Your logic for saving exhibit here
-    Navigator.of(context).pop(Quest(
-      name: exhibitNameController.text.trim(),
-      description: questionController.text.trim(),
-      image: _selectedImage!,
+    Navigator.of(context).pop(Tag(
+      name: tagNameController.text.trim(),
+      id: tagIDController.text.trim(),
+      status: tagStatusController.text.trim(),
     ));
   }
 
-  void _addAnswerField() {
-    setState(() {
-      additionalAnswerControllers.add(TextEditingController());
-    });
-  }
-
-  File? _selectedImage;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1F1D2B),
       appBar: AppBar(
-        title: const Text('Добавление квеста', style: TextStyle(color: Colors.white)),
+        title: const Text('Добавление метки', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -64,14 +56,14 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Название квеста:',
+                'Название метки:',
                 style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
               const SizedBox(height: 5),
               TextFormField(
-                controller: exhibitNameController,
+                controller: tagNameController,
                 decoration: const InputDecoration(
-                  hintText: 'Название квеста',
+                  hintText: 'Название метки',
                   hintStyle: TextStyle(color: Colors.white),
                   filled: true,
                   fillColor: Color(0xFF252836),
@@ -86,14 +78,14 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
               ),
               const SizedBox(height: 20),
               Text(
-                'Описание квеста:',
+                'id метки:',
                 style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
               const SizedBox(height: 5),
               TextFormField(
-                controller: questionController,
+                controller: tagIDController,
                 decoration: const InputDecoration(
-                  hintText: 'Описание квеста',
+                  hintText: 'id метки',
                   hintStyle: TextStyle(color: Colors.white),
                   filled: true,
                   fillColor: Color(0xFF252836),
@@ -108,50 +100,30 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
               ),
               const SizedBox(height: 20),
               Text(
-                'Обложка квеста:',
+                'Экспонат:',
                 style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
               const SizedBox(height: 5),
-              Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF252836),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(4.0),
-                ),
-                child: _selectedImage != null
-                    ? Image.file(_selectedImage!)
-                    : Center(
-                  child: Text(
-                    'Вставьте изображение',
-                    style: TextStyle(color: Colors.white),
+              TextFormField(
+                controller: tagStatusController,
+                decoration: const InputDecoration(
+                  hintText: 'экспонат',
+                  hintStyle: TextStyle(color: Colors.white),
+                  filled: true,
+                  fillColor: Color(0xFF252836),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                      width: 1.0,
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              Padding(
-                padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
-                child: Center(
-                  child: TextButton(
-                    onPressed: _pickImageFromGallery,
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.all(12.0),
-                      backgroundColor: Color(0xFF1AACBC),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                    ),
-                    child: Text(
-                      'Загрузить изображение из файлов',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
+
+
+
             ],
           ),
         ),
@@ -190,13 +162,5 @@ class _adminQuestAddScreenState extends State<adminQuestAddScreen> {
     );
   }
 
-  void _pickImageFromGallery() async {
-    final pickedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
 
-    if (pickedImage != null) {
-      setState(() {
-        _selectedImage = File(pickedImage.path);
-      });
-    }
-  }
 }
