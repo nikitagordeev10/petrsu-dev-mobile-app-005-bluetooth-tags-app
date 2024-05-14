@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:museum_app/views/ui_widgets/quest_widget.dart';
-import 'package:museum_app/controllers/db_controller.dart';
+import 'package:museum_app/views/ui_widgets/questWidget.dart';
+import 'package:museum_app/controllers/dbСontroller.dart';
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;

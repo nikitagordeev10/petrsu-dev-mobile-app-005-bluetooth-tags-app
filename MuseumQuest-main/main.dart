@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:museum_app/views/user/userHomeScreen.dart';
 import 'package:museum_app/views/theme/theme.dart';
-import 'package:museum_app/views/system/SplashScreen.dart';
+import 'package:museum_app/views/system/splashScreen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';

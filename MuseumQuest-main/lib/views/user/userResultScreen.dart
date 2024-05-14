@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:museum_app/modules/exhibit_module.dart';
-import '../../modules/quests_module.dart';
+import 'package:museum_app/modules/exhibitModule.dart';
+import '../../modules/questsModule.dart';
 import 'userHomeScreen.dart';
 
 class userResultScreen extends StatelessWidget {

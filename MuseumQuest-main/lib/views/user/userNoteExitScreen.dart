@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:museum_app/modules/quests_module.dart';
+import 'package:museum_app/modules/questsModule.dart';
 import 'userHomeScreen.dart';
 
 class userExitScreen extends StatelessWidget {

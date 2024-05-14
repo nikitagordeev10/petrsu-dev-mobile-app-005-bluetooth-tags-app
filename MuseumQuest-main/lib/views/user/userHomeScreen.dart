@@ -5,8 +5,8 @@ import 'userSupportScreen.dart';
 import 'userQuestScreen.dart';
 import 'userNoteNewQuestVersion.dart';
 import 'userNoteQuestWasDeleted.dart';
-import 'package:museum_app/views/ui_widgets/quest_widget.dart';
-import 'package:museum_app/modules/quests_module.dart';
+import 'package:museum_app/views/ui_widgets/questWidget.dart';
+import 'package:museum_app/modules/questsModule.dart';
 
 class userHomeScreen extends StatefulWidget {
   const userHomeScreen({Key? key}) : super(key: key);

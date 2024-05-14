@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import '../controllers/db_controller.dart';
+import '../controllers/dbСontroller.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
-import 'package:museum_app/views/ui_widgets/quest_widget.dart';
+import 'package:museum_app/views/ui_widgets/questWidget.dart';
 import 'dart:convert';
 
 Future<List<bool>> getCorrectCardList(List<int> foundExhibitsList) async{
