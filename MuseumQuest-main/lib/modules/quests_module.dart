@@ -4,74 +4,28 @@ import 'package:museum_app/views/ui_widgets/quest_widget.dart';
 import 'package:museum_app/controllers/db_controller.dart';
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 
 // возвращает список, содержащий списки вида: [название_кветса, описание_кветса, путь_до_фоновой_картинки]
 Future<List<List<String>>> getQuestsInformation() async {
-  // "сырая" информация из бд (функция вызывается из db_controller.dart)
-  Map<String, dynamic> questsData = {
-    'Одежда' : {
-      "quest_id": 1,
-      'description': 'Традиционная одежда, вышивка, укращения и ткачество',
-      'stat': '0',
-      'img': 'lib/img/'+'background_image_3.jpg',
-      // id экспонатов
-      'exhibits' : {
-        // картинка экспонтата, информация про него, первый элемент - флаг (определяем вопрос или метка)
-        "quest_1.png": ["0", "q", "Вопрос для первого экспоната (1)?", "1"],
-        "quest_2.png": ["1", "q", "Вопрос для первого экспоната (2)?", "2"],
-        "quest_3.png": ["2", "q", "Вопрос для первого экспоната (3)?", "3"],
-        "quest_4.png": ["3", "q", "Вопрос для первого экспоната (4)?", "4"],
-        "quest_5.png": ["4", "q", "Вопрос для первого экспоната (5)?", "5"],
-        "quest_6.png": ["5", "q", "Вопрос для первого экспоната (6)?", "6"],
-      },
-    },
+  // Загрузка JSON-файла из папки assets
+  final data = await rootBundle.load('lib/database/quests.json');
 
-    'Изобретения' : {
-      "quest_id": 2,
-      'description': 'Лодки, инструменты, украшения из меди и многое другое',
-      'stat': '1',
-      'img': 'lib/img/' + 'background_image_2.jpg',
-      // id экспонатов
-      'exhibits' : {
-        // картинка экспонтата, информация про него, первый элемент - флаг (определяем вопрос или метка)
-        "quest_1.png": ["0", "q", "Какого века макет?", "18"],
-        "quest_2.png": ["1", "q", "Какого века макет?", "18"],
-        "quest_3.png": ["2", "q", "Какого века макет?", "18"],
-        "quest_4.png": ["3", "q", "Какого века макет?", "18"],
-        "quest_5.png": ["4", "q", "Какого века макет?", "18"],
-        "quest_6.png": ["5", "q", "Какого века макет?", "18"],
-      },
-    },
+  // Декодирование JSON
+  String questsData = utf8.decode(data.buffer.asUint8List());
+  Map<String, dynamic> questsJson = jsonDecode(questsData);
 
-    'Национальные блюда' : {
-      "quest_id": 3,
-      'description': 'Традиционные карельские блюда',
-      'stat': '2',
-      'img': 'lib/img/' + 'background_image_1.jpg',
-      // id экспонатов
-      'exhibits' : {
-        // картинка экспонтата, информация про него, первый элемент - флаг (определяем вопрос или метка)
-        "quest_1.png": ["0", "q", "Какого века макет?", "18"],
-        "quest_2.png": ["1", "q", "Какого века макет?", "18"],
-        "quest_3.png": ["2", "q", "Какого века макет?", "18"],
-        "quest_4.png": ["3", "q", "Какого века макет?", "18"],
-        "quest_5.png": ["4", "q", "Какого века макет?", "18"],
-        "quest_6.png": ["5", "q", "Какого века макет?", "18"],
-      },
-    },
-  };//await readJson();
-  // информация для построения виджета квеста
+  // Информация для построения виджета квеста
   List<List<String>> questInfoList = [];
 
-  // по всем квестам, где key - название квеста, а value - информация о квесте
-  for (final element in questsData.entries)
-  {
-      var id = element.value['quest_id'].toString();
-      String description = element.value['description'];
-      String imagePath = element.value['img'];
-      String status = element.value['stat'];
-      questInfoList.add([id, element.key, description, imagePath, status]);
+  // По всем квестам, где key - название квеста, а value - информация о квесте
+  for (final entry in questsJson.entries) {
+    var id = entry.value['quest_id'].toString();
+    String description = entry.value['description'];
+    String imagePath = entry.value['img'];
+    String status = entry.value['stat'];
+    questInfoList.add([id, entry.key, description, imagePath, status]);
   }
   return questInfoList;
 }

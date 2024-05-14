@@ -93,7 +93,10 @@ flutter:
     - lib/views/img/logo/
     - lib/assets/
     - lib/assets/progress.json
-#    - lib/views/img/results_image.png
+    - lib/assets/
+    - lib/database/
+
+  #    - lib/views/img/results_image.png
 #    - lib/views/img/support_image.png
 #    - lib/views/img/background_image_1.jpg
 #    - lib/views/img/background_image_2.jpg
