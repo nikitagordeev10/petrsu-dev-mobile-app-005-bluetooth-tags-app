@@ -1,1 +1,52 @@
-// TODO
+[
+  {
+    "id": 1,
+    "name": "exhibit1",
+    "imgLink": "https://drive.google.com/file/d/1IK4E7kI7T5wlFc8NAIpN9rdJbAdWS3jr/view?usp=drive_link",
+    "idExtraQuestion": 1,
+    "idBluetoothTag": 1
+  },
+  {
+    "id": 2,
+    "name": "exhibit2",
+    "img": "lib/img/background_image_2.jpg",
+    "imgLink": "https://drive.google.com/file/d/18rtiNee4gH16Y1MXN9CbjJUi6DpxyWb-/view?usp=drive_link",
+    "idExtraQuestion": 2,
+    "idBluetoothTag": 2
+  },
+  {
+    "id": 3,
+    "name": "exhibit3",
+    "imgLink": "https://drive.google.com/file/d/1qvNcj72ewP-7scrddE28BW2twzbZyaK_/view?usp=drive_link",
+    "idExtraQuestion": 3,
+    "idBluetoothTag": 1
+  },
+  {
+    "id": 4,
+    "name": "exhibit4",
+    "imgLink": "https://drive.google.com/file/d/1PaLCPXZKYPw5YHwZTQzIxMLWGaRX8H-L/view?usp=drive_link",
+    "idExtraQuestion": 4,
+    "idBluetoothTag": 3
+  },
+  {
+    "id": 6,
+    "name": "exhibit6",
+    "imgLink": "https://drive.google.com/file/d/1WNdCQjJOCI7v5tK__jEBAvkL9UUQ6IdN/view?usp=drive_link",
+    "idExtraQuestion": 6,
+    "idBluetoothTag": 2
+  },
+  {
+    "id": 5,
+    "name": "exhibit5",
+    "imgLink": "https://drive.google.com/file/d/1h0y1sWgzmyGEAxbSltTTfCZZsFwYxllm/view?usp=drive_link",
+    "idExtraQuestion": 5,
+    "idBluetoothTag": 1
+  },
+  {
+    "id": 7,
+    "name": "exhibit7",
+    "imgLink": "https://drive.google.com/file/d/1PeamVI9Yw_QtCjSM-NvL43vuzHJwh7X4/view?usp=drive_link",
+    "idExtraQuestion": 7,
+    "idBluetoothTag": 1
+  }
+]

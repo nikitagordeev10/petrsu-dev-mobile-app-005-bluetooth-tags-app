@@ -1,0 +1,52 @@
+[
+  {
+    "idAdmin": 1,
+    "login": "admin",
+    "passwordHash": "21232f297a57a5a743894a0e4a801fc3"
+  },
+  {
+    "idAdmin": 2,
+    "login": "admin2",
+    "passwordHash": "c84258e9c39059a89ab77d846ddab909"
+  },
+  {
+    "idAdmin": 3,
+    "login": "admin3",
+    "passwordHash": "32cacb2f994f6b42183a1300d9a3e8d6"
+  },
+  {
+    "idAdmin": 4,
+    "login": "admin4",
+    "passwordHash": "fc1ebc848e31e0a68e868432225e3c82"
+  },
+  {
+    "idAdmin": 5,
+    "login": "admin5",
+    "passwordHash": "26a91342190d515231d7238b0c5438e1"
+  },
+  {
+    "idAdmin": 6,
+    "login": "admin6",
+    "passwordHash": "c6b853d6a7cc7ec49172937f68f446c8"
+  },
+  {
+    "idAdmin": 7,
+    "login": "admin7",
+    "passwordHash": "788073cefde4b240873e1f52f5371d7d"
+  },
+  {
+    "idAdmin": 8,
+    "login": "admin8",
+    "passwordHash": "8762eb814817cc8dcbb3fb5c5fcd52e0"
+  },
+  {
+    "idAdmin": 9,
+    "login": "admin9",
+    "passwordHash": "eed57216df3731106517ccaf5da2122d"
+  },
+  {
+    "idAdmin": 10,
+    "login": "admin10",
+    "passwordHash": "4fbd41a36dac3cd79aa1041c9648ab89"
+  }
+]
