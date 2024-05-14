@@ -83,6 +83,8 @@ void _loadCorrectCards() async {
                                 context,
                                 index,
                                 _exhibitsInfoList[index][3],
+                                _exhibitsInfoList[index][4],
+                                _exhibitsInfoList[index][5],
                                 cardWidth,
                                 cardHeight,
                               ),
@@ -108,6 +110,8 @@ void _loadCorrectCards() async {
       BuildContext context,
       int index,
       String imagePath,
+      String questionText,
+      String questionAnswer,
       double cardWidth,
       double cardHeight,
       ) {
@@ -187,6 +191,8 @@ void _loadCorrectCards() async {
                               questionIndex: index,
                               questId: this.questId,
                               foundExhibitsList: this.foundExhibitsList,
+                              questionText: questionText,
+                              questionAnswer: questionAnswer,
                               onAnswerSubmitted: (isCorrect) {
                                 setState(() {
                                   _isCardCorrect[index] = isCorrect;

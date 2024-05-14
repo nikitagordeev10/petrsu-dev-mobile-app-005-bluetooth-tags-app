@@ -7,6 +7,8 @@ class userCheckQuestionScreen extends StatefulWidget {
   final Function(bool) onAnswerSubmitted;
   final List<int> foundExhibitsList;
   final int questId;
+  final String questionText;
+  final String questionAnswer;
 
   const userCheckQuestionScreen({
     Key? key,
@@ -14,10 +16,12 @@ class userCheckQuestionScreen extends StatefulWidget {
     required this.onAnswerSubmitted,
     required this.foundExhibitsList,
     required this.questId,
+    required this.questionText,
+    required this.questionAnswer,
   }) : super(key: key);
 
   @override
-  _userCheckQuestionScreenState createState() => _userCheckQuestionScreenState(foundExhibitsList: this.foundExhibitsList, questId: this.questId);
+  _userCheckQuestionScreenState createState() => _userCheckQuestionScreenState(foundExhibitsList: this.foundExhibitsList, questId: this.questId, questionText: this.questionText, questionAnswer: this.questionAnswer);
 }
 
 class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
@@ -25,11 +29,13 @@ class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
   String _errorMessage = '';
   List<int> foundExhibitsList;
   int questId;
-  _userCheckQuestionScreenState({required this.foundExhibitsList, required this.questId});
+  String questionText;
+  String questionAnswer;
+  _userCheckQuestionScreenState({required this.foundExhibitsList, required this.questId, required this.questionText, required this.questionAnswer});
 
 
   bool _isCorrectAnswer(String answer) {
-    return answer.trim() == '18';
+    return answer.trim() == questionAnswer;
   }
 
   @override
@@ -48,7 +54,7 @@ class _userCheckQuestionScreenState extends State<userCheckQuestionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Какого века макет?',
+              questionText,
               style: TextStyle(fontSize: 18.0, color: Colors.white),
             ),
             SizedBox(height: 20.0),
