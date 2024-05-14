@@ -53,7 +53,7 @@ class _userSupportScreenState extends State<userSupportScreen> {
               GestureDetector(
                 onTap: _incrementTapCount,
                 child: Image.asset(
-                  'lib/img/support_image.png',
+                  'lib/views/img/support_image.png',
                   width: 200,
                   height: 200,
                 ),
@@ -101,12 +101,12 @@ class _userSupportScreenState extends State<userSupportScreen> {
           BottomNavigationBarItem(
             label: 'Квесты',
             icon: Image.asset(
-              'lib/img/icons/quests.png',
+              'lib/views/img/icons/quests.png',
             ),
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
-              'lib/img/icons/support.png',
+              'lib/views/img/icons/support.png',
             ),
             label: 'Поддержка',
           ),

@@ -142,12 +142,12 @@ class _userHomeScreenState extends State<userHomeScreen> {
             BottomNavigationBarItem(
               label: 'Квесты',
               icon: Image.asset(
-                'lib/img/icons/quests.png',
+                'lib/views/img/icons/quests.png',
               ),
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                'lib/img/icons/support.png',
+                'lib/views/img/icons/support.png',
               ),
               label: 'Поддержка',
             ),

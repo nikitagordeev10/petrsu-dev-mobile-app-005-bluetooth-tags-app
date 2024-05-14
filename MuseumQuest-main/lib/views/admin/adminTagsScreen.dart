@@ -359,7 +359,7 @@ class adminDeleteTagScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
-            'lib/img/icons/delete.png',
+            'lib/views/img/icons/delete.png',
             width: 130,
             height: 130,
           ),

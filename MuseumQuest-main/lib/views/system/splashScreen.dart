@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Spacer(), // Равномерное распределение пространства сверху и снизу
             Image.asset(
-              'lib/img/logo/logo.png',
+              'lib/views/img/logo/logo.png',
               width: 130,
               height: 130,
             ),

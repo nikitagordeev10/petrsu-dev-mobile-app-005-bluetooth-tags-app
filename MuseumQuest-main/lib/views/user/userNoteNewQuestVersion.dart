@@ -13,7 +13,7 @@ class userNewQuestVersion extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              'lib/img/icons/new_version.png',
+              'lib/views/img/icons/new_version.png',
               width: 130, // Указываем размер изображения
               height: 130,
             ),

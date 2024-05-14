@@ -122,10 +122,10 @@ class _adminExibitScreenState extends State<adminExibitScreen> {
       double cardWidth,
       double cardHeight,
       ) {
-    final String imagePath = 'lib/img/quest/quest_$questNumber.png';
-    final String magnifyingGlassIcon = 'lib/img/icons/magnifying_glass.png'; // Иконка лупы
-    final String deleteIcon = 'lib/img/icons/delete_small.png'; // Иконка удаления
-    final String editIcon = 'lib/img/icons/edit.png'; // Иконка редактирования
+    final String imagePath = 'lib/views/img/quest/quest_$questNumber.png';
+    final String magnifyingGlassIcon = 'lib/views/img/icons/magnifying_glass.png'; // Иконка лупы
+    final String deleteIcon = 'lib/views/img/icons/delete_small.png'; // Иконка удаления
+    final String editIcon = 'lib/views/img/icons/edit.png'; // Иконка редактирования
 
     return Container(
       width: cardWidth,

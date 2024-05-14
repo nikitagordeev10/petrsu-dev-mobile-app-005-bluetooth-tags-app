@@ -35,7 +35,7 @@ class userResultScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'lib/img/results_image.png',
+                  'lib/views/img/results_image.png',
                   width: 200,
                   height: 200,
                 ),

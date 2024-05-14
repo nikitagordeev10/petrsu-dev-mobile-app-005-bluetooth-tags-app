@@ -9,8 +9,8 @@ Widget buildExhibitCard(
     double cardWidth,
     double cardHeight,
     ) {
-  final String imagePath = 'lib/img/quest/quest_$questNumber.png';
-  final String magnifyingGlassIcon = 'lib/img/icons/magnifying_glass.png'; // Иконка лупы
+  final String imagePath = 'lib/views/img/quest/quest_$questNumber.png';
+  final String magnifyingGlassIcon = 'lib/views/img/icons/magnifying_glass.png'; // Иконка лупы
   return Container(
     width: cardWidth,
     height: cardHeight,

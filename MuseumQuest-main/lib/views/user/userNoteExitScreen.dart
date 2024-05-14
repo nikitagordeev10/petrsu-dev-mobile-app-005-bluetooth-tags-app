@@ -16,7 +16,7 @@ class userExitScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(
-              'lib/img/icons/exit.png',
+              'lib/views/img/icons/exit.png',
               width: 130, // Указываем размер изображения
               height: 130,
             ),
