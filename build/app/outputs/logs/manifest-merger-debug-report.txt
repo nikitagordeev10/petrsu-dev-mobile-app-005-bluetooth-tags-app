@@ -1,0 +1,505 @@
+-- Merging decision tree log ---
+application
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:11:5-42:10
+MERGED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
+MERGED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-34:19
+MERGED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-34:19
+MERGED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:22:5-39:19
+MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\nikit\.gradle\caches\transforms-3\0cd8229020d2efe47b48a065a0fa6966\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\nikit\.gradle\caches\transforms-3\0cd8229020d2efe47b48a065a0fa6966\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\nikit\.gradle\caches\transforms-3\c57cd79d71fe115fd511551d72ff62b6\transformed\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\nikit\.gradle\caches\transforms-3\c57cd79d71fe115fd511551d72ff62b6\transformed\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\nikit\.gradle\caches\transforms-3\44f57253df7e823d3ac1ba5cc28de8ce\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\nikit\.gradle\caches\transforms-3\44f57253df7e823d3ac1ba5cc28de8ce\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\17b52f3ce5be01faa0d2efabbb4c4451\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\17b52f3ce5be01faa0d2efabbb4c4451\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:name
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+manifest
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+MERGED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+MERGED from [:app_links] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\app_links\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-36:12
+MERGED from [:flutter_plugin_android_lifecycle] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:permission_handler_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:shared_preferences_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:15:1-41:12
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e75666861c19ddc5e1b02c228a732c3d\transformed\jetified-datastore-preferences-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ea5100a471779cdfb4c61328eadd49f2\transformed\jetified-datastore-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\2a215381204751055df81b6269e717b7\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\nikit\.gradle\caches\transforms-3\0cd8229020d2efe47b48a065a0fa6966\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\a7c44db93989f10fa2a6dabccd7f71b2\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\nikit\.gradle\caches\transforms-3\c57cd79d71fe115fd511551d72ff62b6\transformed\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\nikit\.gradle\caches\transforms-3\44f57253df7e823d3ac1ba5cc28de8ce\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\nikit\.gradle\caches\transforms-3\2c78d49fbcc625202f50a9334fbc9153\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.9.1] C:\Users\nikit\.gradle\caches\transforms-3\84f9a2a8e90bc49cea8eb6f83b8fa2e7\transformed\jetified-activity-1.9.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\nikit\.gradle\caches\transforms-3\8bb96117b0f09282d9100503ae2b9eab\transformed\browser-1.8.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\eeb3b3d28863e46e8405d58b4e4ce9b4\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\3dd24de0bfb0a58b7b0437cba93312a0\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e7089abc1d97d688192104f9e7c95213\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\6aee316721cde10eee602b1ec4b1a4a6\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\4ac619b9deba4a1fa8987b5cd7ce3b2f\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\b44e82f04ca2fbbb378f070b4fb3afd1\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\9284d5dbf531e8af2d4296bbf056c51a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\b977d140845cfa8829de711262a9ed75\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\7628447021ddaf60af1b9170edc954e9\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\nikit\.gradle\caches\transforms-3\93b9d15e098df96a93b7a4fb1262fd3b\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\nikit\.gradle\caches\transforms-3\ff532de12e996d0fab19ca20e85a058f\transformed\exifinterface-1.3.7\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb8521d17d051bfde5328e053af79289\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\b9c5a11634d8068a0d3a82731f07a468\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\17b52f3ce5be01faa0d2efabbb4c4451\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\9cdfc7195246f8265e68c312de57c609\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\nikit\.gradle\caches\transforms-3\0f877a570394a12cc35ff27489f11c26\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.microg:safe-parcel:1.7.0] C:\Users\nikit\.gradle\caches\transforms-3\1349f434a5d1b51687e1cb2c4fbfb728\transformed\jetified-safe-parcel-1.7.0\AndroidManifest.xml:6:1-14:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\nikit\.gradle\caches\transforms-3\bd9b8afb5ccab932cf8ed25b1b7c2f57\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\nikit\.gradle\caches\transforms-3\8652bd76d4a7f5b535a8b64a5ae06e0a\transformed\jetified-grpc-android-1.62.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\76a8bdc6759b492cce2c9a91aaee4630\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:2:5-25
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:2:5-25
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:1-80:12
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:6:5-73
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:6:22-70
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:7:5-76
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:7:22-73
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:8:5-74
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:8:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:9:22-78
+queries
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:45:5-79:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:46:9-49:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:47:13-72
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:47:21-70
+data
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:48:13-50
+	android:mimeType
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:48:19-48
+intent#action:name:android.intent.action.VIEW+data:scheme:sms
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:52:9-55:18
+action#android.intent.action.VIEW
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:53:13-65
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:53:21-62
+intent#action:name:android.intent.action.VIEW+data:scheme:tel
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:58:9-61:18
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:64:9-66:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:65:13-90
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:65:21-87
+intent#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:69:9-72:18
+action#android.intent.action.MAIN
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:70:13-65
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:70:21-62
+category#android.intent.category.LAUNCHER
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:71:13-73
+	android:name
+		ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:71:23-70
+intent#action:name:android.intent.action.VIEW+data:scheme:mailto
+ADDED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml:75:9-78:18
+uses-sdk
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+MERGED from [:app_links] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\app_links\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:app_links] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\app_links\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:flutter_plugin_android_lifecycle] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_plugin_android_lifecycle] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\permission_handler_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:19:5-44
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e75666861c19ddc5e1b02c228a732c3d\transformed\jetified-datastore-preferences-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e75666861c19ddc5e1b02c228a732c3d\transformed\jetified-datastore-preferences-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ea5100a471779cdfb4c61328eadd49f2\transformed\jetified-datastore-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ea5100a471779cdfb4c61328eadd49f2\transformed\jetified-datastore-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\2a215381204751055df81b6269e717b7\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\2a215381204751055df81b6269e717b7\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\nikit\.gradle\caches\transforms-3\0cd8229020d2efe47b48a065a0fa6966\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\nikit\.gradle\caches\transforms-3\0cd8229020d2efe47b48a065a0fa6966\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\a7c44db93989f10fa2a6dabccd7f71b2\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\a7c44db93989f10fa2a6dabccd7f71b2\transformed\jetified-firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\nikit\.gradle\caches\transforms-3\c57cd79d71fe115fd511551d72ff62b6\transformed\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\nikit\.gradle\caches\transforms-3\c57cd79d71fe115fd511551d72ff62b6\transformed\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\nikit\.gradle\caches\transforms-3\44f57253df7e823d3ac1ba5cc28de8ce\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] C:\Users\nikit\.gradle\caches\transforms-3\44f57253df7e823d3ac1ba5cc28de8ce\transformed\jetified-play-services-tasks-18.1.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\nikit\.gradle\caches\transforms-3\2c78d49fbcc625202f50a9334fbc9153\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\nikit\.gradle\caches\transforms-3\2c78d49fbcc625202f50a9334fbc9153\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.9.1] C:\Users\nikit\.gradle\caches\transforms-3\84f9a2a8e90bc49cea8eb6f83b8fa2e7\transformed\jetified-activity-1.9.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.1] C:\Users\nikit\.gradle\caches\transforms-3\84f9a2a8e90bc49cea8eb6f83b8fa2e7\transformed\jetified-activity-1.9.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\nikit\.gradle\caches\transforms-3\8bb96117b0f09282d9100503ae2b9eab\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.8.0] C:\Users\nikit\.gradle\caches\transforms-3\8bb96117b0f09282d9100503ae2b9eab\transformed\browser-1.8.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\eeb3b3d28863e46e8405d58b4e4ce9b4\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\eeb3b3d28863e46e8405d58b4e4ce9b4\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\3dd24de0bfb0a58b7b0437cba93312a0\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\3dd24de0bfb0a58b7b0437cba93312a0\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e7089abc1d97d688192104f9e7c95213\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\e7089abc1d97d688192104f9e7c95213\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\6aee316721cde10eee602b1ec4b1a4a6\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\6aee316721cde10eee602b1ec4b1a4a6\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\4ac619b9deba4a1fa8987b5cd7ce3b2f\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\4ac619b9deba4a1fa8987b5cd7ce3b2f\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\b44e82f04ca2fbbb378f070b4fb3afd1\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\b44e82f04ca2fbbb378f070b4fb3afd1\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\9284d5dbf531e8af2d4296bbf056c51a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\9284d5dbf531e8af2d4296bbf056c51a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\b977d140845cfa8829de711262a9ed75\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\b977d140845cfa8829de711262a9ed75\transformed\jetified-core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\7628447021ddaf60af1b9170edc954e9\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] C:\Users\nikit\.gradle\caches\transforms-3\7628447021ddaf60af1b9170edc954e9\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\nikit\.gradle\caches\transforms-3\93b9d15e098df96a93b7a4fb1262fd3b\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\nikit\.gradle\caches\transforms-3\93b9d15e098df96a93b7a4fb1262fd3b\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\nikit\.gradle\caches\transforms-3\ff532de12e996d0fab19ca20e85a058f\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\nikit\.gradle\caches\transforms-3\ff532de12e996d0fab19ca20e85a058f\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb8521d17d051bfde5328e053af79289\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb8521d17d051bfde5328e053af79289\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\b9c5a11634d8068a0d3a82731f07a468\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\nikit\.gradle\caches\transforms-3\b9c5a11634d8068a0d3a82731f07a468\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\17b52f3ce5be01faa0d2efabbb4c4451\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\17b52f3ce5be01faa0d2efabbb4c4451\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\9cdfc7195246f8265e68c312de57c609\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\9cdfc7195246f8265e68c312de57c609\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:18:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\nikit\.gradle\caches\transforms-3\0f877a570394a12cc35ff27489f11c26\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\nikit\.gradle\caches\transforms-3\0f877a570394a12cc35ff27489f11c26\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [org.microg:safe-parcel:1.7.0] C:\Users\nikit\.gradle\caches\transforms-3\1349f434a5d1b51687e1cb2c4fbfb728\transformed\jetified-safe-parcel-1.7.0\AndroidManifest.xml:10:5-12:41
+MERGED from [org.microg:safe-parcel:1.7.0] C:\Users\nikit\.gradle\caches\transforms-3\1349f434a5d1b51687e1cb2c4fbfb728\transformed\jetified-safe-parcel-1.7.0\AndroidManifest.xml:10:5-12:41
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\nikit\.gradle\caches\transforms-3\bd9b8afb5ccab932cf8ed25b1b7c2f57\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\nikit\.gradle\caches\transforms-3\bd9b8afb5ccab932cf8ed25b1b7c2f57\transformed\jetified-annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\nikit\.gradle\caches\transforms-3\8652bd76d4a7f5b535a8b64a5ae06e0a\transformed\jetified-grpc-android-1.62.2\AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\nikit\.gradle\caches\transforms-3\8652bd76d4a7f5b535a8b64a5ae06e0a\transformed\jetified-grpc-android-1.62.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\76a8bdc6759b492cce2c9a91aaee4630\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\nikit\.gradle\caches\transforms-3\76a8bdc6759b492cce2c9a91aaee4630\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\main\AndroidManifest.xml
+		INJECTED from E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\android\app\src\debug\AndroidManifest.xml
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:30:9-38:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:16:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:cloud_firestore] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
+ADDED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:firebase_core] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-19:20
+	android:grantUriPermissions
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-47
+	android:authorities
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-74
+	android:exported
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-18:75
+	android:resource
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-72
+	android:name
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+service#com.google.android.gms.metadata.ModuleDependencies
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-33:19
+	android:enabled
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-36
+	android:exported
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
+	tools:ignore
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-40
+	android:name
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-78
+intent-filter#action:name:com.google.android.gms.metadata.MODULE_DEPENDENCIES
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-28:29
+action#com.google.android.gms.metadata.MODULE_DEPENDENCIES
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-94
+	android:name
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-91
+meta-data#photopicker_activity:0:required
+ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-32:36
+	android:value
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:32:17-33
+	android:name
+		ADDED from [:image_picker_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-63
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] E:\_arhive\petrsu\dev_mobile_app\005_bluetooth_tags_app\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:10:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\nikit\.gradle\caches\transforms-3\8652bd76d4a7f5b535a8b64a5ae06e0a\transformed\jetified-grpc-android-1.62.2\AndroidManifest.xml:7:5-79
+MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\nikit\.gradle\caches\transforms-3\8652bd76d4a7f5b535a8b64a5ae06e0a\transformed\jetified-grpc-android-1.62.2\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:10:22-76
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:25.1.0] C:\Users\nikit\.gradle\caches\transforms-3\ad7be2f3c1263624468a028b1b13c709\transformed\jetified-firebase-firestore-25.1.0\AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\ecb99453ec6ea4b6c6e830b4f7ad4932\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:21.0.0] C:\Users\nikit\.gradle\caches\transforms-3\bb5dd83b2d2d046e8c4935e384b62dda\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\nikit\.gradle\caches\transforms-3\f302e75fb7efd781bcf1a29281c188da\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\nikit\.gradle\caches\transforms-3\3b2d428fede6c5e3dd9018d5c02cc047\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] C:\Users\nikit\.gradle\caches\transforms-3\a43f60338762a20514d953a92576aa3e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.example.museum_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.example.museum_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\nikit\.gradle\caches\transforms-3\2f6a5506f4dac22f7ab67b13b215ea43\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\nikit\.gradle\caches\transforms-3\69635902d600ff315c2d2b7f75af662f\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:25:13-67
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nikit\.gradle\caches\transforms-3\e852edee255e4ba7fa4d5b58ba237ddb\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92

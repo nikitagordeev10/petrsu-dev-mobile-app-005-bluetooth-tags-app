@@ -1,0 +1,1 @@
+ E:\\_arhive\\petrsu\\dev_mobile_app\\005_bluetooth_tags_app\\.dart_tool\\flutter_build\\5f0d740b2ecd8e14adacfac75f6dae5f\\native_assets.yaml: 

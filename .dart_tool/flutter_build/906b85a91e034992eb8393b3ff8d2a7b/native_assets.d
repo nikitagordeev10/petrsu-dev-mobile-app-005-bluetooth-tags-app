@@ -1,0 +1,1 @@
+ D:\\petrsu\\technology_software_manufacturing\\3_develop\\mobile_admin\\MuseumQuest-main\\.dart_tool\\flutter_build\\906b85a91e034992eb8393b3ff8d2a7b\\native_assets.yaml: 

@@ -1,16 +1,4 @@
-# museum_app
+Приложение позволит проходить квесты в музее. Квест заключается в последовательном поиске экспонатов на выставке, изображенных на экране телефона. При нахождении экспоната пользователь отмечает это в приложении, после чего проверяется факт нахождения нужного предмета посредством bluetooth-маячка, который расположен рядом с этим предметом. Также приложение позволит создавать новые квесты.
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="версия_5.jpg" width="100%">
